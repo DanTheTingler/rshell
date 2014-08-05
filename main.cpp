@@ -9,10 +9,9 @@ using namespace std;
 
 int main()
 {
-    char str[512];
-
+    char str[256];
     cout << "$ ";
-    cin >> str;
+    cin.getline(str, 256);
 
     if(strcmp(str, "exit") == 0)
     {
@@ -21,12 +20,21 @@ int main()
 
     cout << "Your command was: " << str << endl;
 
-    if(execl("/bin/ls", "-1", NULL) == -1)
-    {
-        perror("execl failed: ");
+    //testing out input parsing
 
+    char *token = strtok(str, " ");
+    while (token != NULL)
+    {
+        cout << token << endl;
+        token = strtok(NULL, " ");
     }
 
+
+    if(execl("/bin/ls", "/bin/ls", "-l", NULL) == -1)
+    {
+        perror("execl failed: ");
+    }
+    
 
     return 0;
 }
