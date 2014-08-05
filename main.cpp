@@ -10,6 +10,9 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     char str[256];
+    char *user;
+    user = getlogin();
+    cout << user;
     cout << "$ ";
     cin.getline(str, 256);
 
