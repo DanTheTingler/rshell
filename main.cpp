@@ -4,11 +4,15 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
+    bool amper = false;
     char str[256];
     char *user;
     user = getlogin();
@@ -25,6 +29,7 @@ int main(int argc, char *argv[])
 
     //testing out input parsing
 
+
     int i = 0;
     char *arg[64];
 
@@ -37,13 +42,43 @@ int main(int argc, char *argv[])
     }
 
     arg[i] = NULL;
-
-    if(execvp(arg[0], arg) < 0 )
+    
+    for(int d = 0; d < i; d++)
     {
-        perror("execvp failed: ");
+        if(*arg[d] == '&')
+        {
+            amper = true;
+        }
     }
 
+    
+    pid_t pid = fork();
 
+    if(pid) //parent
+    {
+        if(amper == false)
+        {
+            wait(0);
+        }
+        return 0;
+    }
+
+    if(pid == 0)
+    {
+
+        if(execvp(arg[0], arg) < 0 )
+        {
+            perror("execvp failed: ");
+        }
+        exit(1);
+    }
+
+    else
+    {
+        //the fork will have failed
+        perror("fork has failed: ");
+        return 0;
+    }
 
     /*
     if(execl("/bin/ls", "/bin/ls", "-l", NULL) == -1)
