@@ -12,80 +12,82 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    bool amper = false;
-    char str[256];
-    char *user;
-    user = getlogin();
-    cout << user;
-    cout << "$ ";
-    cin.getline(str, 256);
-
-    if(strcmp(str, "exit") == 0)
+    while(1)
     {
-        exit(1);
-    }
+        bool amper = false;
+        char str[256];
+        char *user;
+        user = getlogin();
+        cout << user;
+        cout << "$ ";
+        cin.getline(str, 256);
 
-    cout << "Your command was: " << str << endl;
-
-    //testing out input parsing
-
-
-    int i = 0;
-    char *arg[64];
-
-    char *token = strtok(str, " ");
-    while (token != NULL)
-    {
-        arg[i] = token;
-        i++;
-        token = strtok(NULL, " ");
-    }
-
-    arg[i] = NULL;
-    
-    for(int d = 0; d < i; d++)
-    {
-        if(*arg[d] == '&')
+        if(strcmp(str, "exit") == 0)
         {
-            amper = true;
+            exit(1);
         }
-    }
 
-    
-    pid_t pid = fork();
+        cout << "Your command was: " << str << endl;
 
-    if(pid) //parent
-    {
-        if(amper == false)
+        //testing out input parsing
+
+
+        int i = 0;
+        char *arg[64];
+
+        char *token = strtok(str, " ");
+        while (token != NULL)
         {
-            wait(0);
+            arg[i] = token;
+            i++;
+            token = strtok(NULL, " ");
         }
-        return 0;
-    }
 
-    if(pid == 0)
-    {
-
-        if(execvp(arg[0], arg) < 0 )
+        arg[i] = NULL;
+        
+        for(int d = 0; d < i; d++)
         {
-            perror("execvp failed: ");
+            if(*arg[d] == '&')
+            {
+                amper = true;
+            }
         }
-        exit(1);
-    }
 
-    else
-    {
-        //the fork will have failed
-        perror("fork has failed: ");
-        return 0;
-    }
+        
+        pid_t pid = fork();
 
-    /*
-    if(execl("/bin/ls", "/bin/ls", "-l", NULL) == -1)
-    {
-        perror("execl failed: ");
-    }
-    */
+        if(pid) //parent
+        {
+            if(amper == false)
+            {
+                wait(0);
+            }
+            return 0;
+        }
 
+        if(pid == 0)
+        {
+
+            if(execvp(arg[0], arg) < 0 )
+            {
+                perror("execvp failed: ");
+            }
+            exit(1);
+        }
+
+        else
+        {
+            //the fork will have failed
+            perror("fork has failed: ");
+            return 0;
+        }
+
+        /*
+        if(execl("/bin/ls", "/bin/ls", "-l", NULL) == -1)
+        {
+            perror("execl failed: ");
+        }
+        */
+    }
     return 0;
 }
