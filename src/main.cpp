@@ -15,22 +15,26 @@ int main(int argc, char *argv[])
     while(1)
     {
         bool amper = false;
-        char str[256];
+        char str[1024];
         char *user;
         user = getlogin();
         cout << user;
         cout << "$ ";
-        cin.getline(str, 256);
+        cin.getline(str, 1024);
+
+        for(int p  = 0; p < 1024; p++)
+        {
+            if(str[p] == '#')
+            {
+                str[p] = '\0';
+            }
+        }
+
 
         if(strcmp(str, "exit") == 0)
         {
             exit(1);
         }
-
-        cout << "Your command was: " << str << endl;
-
-        //testing out input parsing
-
 
         int i = 0;
         char *arg[64];
@@ -44,6 +48,7 @@ int main(int argc, char *argv[])
         }
 
         arg[i] = NULL;
+       
         
         for(int d = 0; d < i; d++)
         {
