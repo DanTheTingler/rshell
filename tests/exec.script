@@ -1,0 +1,79 @@
+Script started on Thu 07 Aug 2014 01:24:06 AM PDT
+]0;tingles@Tingles: ~/rshell/bintingles@Tingles:~/rshell/bin$ ./rshell
+@Tingles$ 
+@Tingles$ #te   #previous line was testing blank input, this line is test       is just                    t
+@Tingles$ asdf #testing gibberish
+execvp failed: No such file or directory
+@Tingles$ ls -   s #time to e test ls and all its flags
+exec.script  rshell
+@Tingles$ ls -l
+total 16
+-rw-rw-r-- 1 tingles tingles     0 Aug  7 01:24 exec.script
+-rwxrwxr-x 1 tingles tingles 13800 Aug  7 00:52 rshell
+@Tingles$ ls -a
+.  ..  exec.script  rshell
+@Tingles$ ls -la
+total 24
+drwxrwxr-x 2 tingles tingles  4096 Aug  7 01:24 .
+drwxrwxr-x 5 tingles tingles  4096 Aug  7 00:52 ..
+-rw-rw-r-- 1 tingles tingles     0 Aug  7 01:24 exec.script
+-rwxrwxr-x 1 tingles tingles 13800 Aug  7 00:52 rshell
+@Tingles$ ls -  al
+total 24
+drwxrwxr-x 2 tingles tingles  4096 Aug  7 01:24 .
+drwxrwxr-x 5 tingles tingles  4096 Aug  7 00:52 ..
+-rw-rw-r-- 1 tingles tingles     0 Aug  7 01:24 exec.script
+-rwxrwxr-x 1 tingles tingles 13800 Aug  7 00:52 rshell
+@Tingles$ ls -  l -a
+total 24
+drwxrwxr-x 2 tingles tingles  4096 Aug  7 01:24 .
+drwxrwxr-x 5 tingles tingles  4096 Aug  7 00:52 ..
+-rw-rw-r-- 1 tingles tingles     0 Aug  7 01:24 exec.script
+-rwxrwxr-x 1 tingles tingles 13800 Aug  7 00:52 rshell
+@Tingles$ ls -a -l
+total 24
+drwxrwxr-x 2 tingles tingles  4096 Aug  7 01:24 .
+drwxrwxr-x 5 tingles tingles  4096 Aug  7 00:52 ..
+-rw-rw-r-- 1 tingles tingles     0 Aug  7 01:24 exec.script
+-rwxrwxr-x 1 tingles tingles 13800 Aug  7 00:52 rshell
+@Tingles$ ls#comment testing with no spaces between ls and #
+exec.script  rshell
+@Tingles$ ls #comment testing with one space between ls and #
+exec.script  rshell
+@Tingles$ ls # cc      comment testing with losts of spaces             ts of spaces between the two
+exec.script  rshell
+@Tingles$ ls #-la testing to make sure flags dont run          dont get read
+exec.script  rshell
+@Tingles$ ls # 0-  -l #-a testing to make sure one flag can get read
+total 16
+-rw-rw-r-- 1 tingles tingles     0 Aug  7 01:24 exec.script
+-rwxrwxr-x 1 tingles tingles 13800 Aug  7 00:52 rshell
+@Tingles$ cat thisfiledoesnt otexist testing cat
+cat: thisfiledoesnotexist: No such file or directory
+cat: testing: No such file or directory
+cat: cat: No such file or directory
+@Tingles$ cat   touch new.txt #testing touch
+@Tingles$ ls #making sure new file was created
+exec.script  new.txt  rshell
+@Tingles$ echo "hello" #testing echo
+"hello"
+@Tingles$ echo #"hello" testing echo with #
+
+@Tingles$ mkdir codeisfun #testing mkdir
+@Tingles$ ls  ls #checking  toseeiffo          to see if fold der was made
+codeisfun  exec.script	new.txt  rshell
+@Tingles$ gan  eany & #time to test &,   
+@Tingles$ ps #geany should now be open and running in the background
+  PID TTY          TIME CMD
+ 4146 pts/27   00:00:00 bash
+ 4159 pts/27   00:00:00 rshell
+ 4189 pts/27   00:00:00 geany
+ 4196 pts/27   00:00:00 ps
+@Tingles$ #asyoucan         you can see geany is succse  essfully running in background, commands can still be made
+@Tingles$ ls
+codeisfun  exec.script	new.txt  rshell
+@Tingles$ ls -    exit
+]0;tingles@Tingles: ~/rshell/bintingles@Tingles:~/rshell/bin$ exit
+exit
+
+Script done on Thu 07 Aug 2014 01:29:18 AM PDT

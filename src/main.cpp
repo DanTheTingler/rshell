@@ -7,23 +7,25 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-
 using namespace std;
+
+
 
 int main(int argc, char *argv[])
 {
     while(1) //continue looping
     {
         bool amper = false;
-        char str[1024];
-        char *user;
-        char hostname[256];
-        user = getlogin(); //get user's login
-        gethostname(hostname, 256); //get user's host name
+        char str[1024] = {0};
+        char user[256] = {0};
+        char hostname[256] = {0};
+        getlogin_r(user, sizeof(user)-1); //get user's login
+        gethostname(hostname, sizeof(hostname)-1); //get user's host name
         cout << user; //user's name
         cout << "@" << hostname; //computer's host name
         cout << "$ "; //bash 
         cin.getline(str, 1024); //get user input
+        
 
         for(int p  = 0; p < 1024; p++) //check to see if user has enetered a #
         {
@@ -40,7 +42,10 @@ int main(int argc, char *argv[])
         }
 
         int i = 0;
-        char *arg[1024]; 
+        //char *arg[1024];
+
+        char **arg;
+        arg = new char *[1024];
 
         char *token = strtok(str, " "); //parse input using strtok
         while (token != NULL) 
@@ -77,8 +82,9 @@ int main(int argc, char *argv[])
 
             if(execvp(arg[0], arg) < 0 ) //calls the command and its flags
             {
-                perror("execvp failed: "); //error check/message
+                perror("execvp failed"); //error check/message
             }
+           
             exit(1);
         }
 
@@ -87,7 +93,9 @@ int main(int argc, char *argv[])
             perror("fork has failed: ");
             return 0;
         }
-
+    
+        delete[] arg;
     }
+
     return 0;
 }
