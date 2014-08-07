@@ -23,4 +23,3 @@ Alas, I am only a student, and there are some bugs with my program. Here they ar
 
 5. Running the command echo "hello" will output "hello" instead of the hello that should be output. Difference is the quotes.
 
-6. Running cat with strange symbols, such as cat %#$!@# crashes the program.
