@@ -1,0 +1,507 @@
+Script started on Tue 12 Aug 2014 10:54:23 AM PDT
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls #tseting [K[K[K[K[K[K[Kesting with no para[K[K[K[Kflags
+README.md [38;5;34mls[0;00m [38;5;34mtests[0;00m Makefile~ ls.script LICENSE [38;5;34msrc[0;00m Makefile testingandstuff~ 
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -l #testing with one flag
+-rw-r--r-- 1 tingles tingles 59 Aug 07 11:09 README.md 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34mls[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 07 11:08 [38;5;34mtests[0;00m 
+-rw-r--r-- 1 tingles tingles 98 Aug 07 11:08 Makefile~ 
+-rw-rw-r-- 1 tingles tingles 0 Aug 12 10:54 ls.script 
+-rw-r--r-- 1 tingles tingles 18026 Aug 07 11:08 LICENSE 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34msrc[0;00m 
+-rw-r--r-- 1 tingles tingles 163 Aug 12 00:45 Makefile 
+-rw-r--r-- 1 tingles tingles 1918 Aug 11 20:09 testingandstuff~ 
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -a
+README.md [38;5;34mls[0;00m [38;5;34mtests[0;00m Makefile~ ls.script LICENSE [38;5;34m.[0;00m [38;5;34m..[0;00m [38;5;34m.git[0;00m [38;5;34msrc[0;00m Makefile testingandstuff~ 
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -R
+.:
+README.md [38;5;34mls[0;00m [38;5;34mtests[0;00m Makefile~ ls.script LICENSE [38;5;34msrc[0;00m Makefile testingandstuff~ 
+
+./tests:
+exec.script 
+
+./src:
+ls.cpp main.cpp [38;5;34ma.out[0;00m 
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -l -R #now testing with two flags
+.:
+-rw-r--r-- 1 tingles tingles 59 Aug 07 11:09 README.md 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34mls[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 07 11:08 [38;5;34mtests[0;00m 
+-rw-r--r-- 1 tingles tingles 98 Aug 07 11:08 Makefile~ 
+-rw-rw-r-- 1 tingles tingles 0 Aug 12 10:54 ls.script 
+-rw-r--r-- 1 tingles tingles 18026 Aug 07 11:08 LICENSE 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34msrc[0;00m 
+-rw-r--r-- 1 tingles tingles 163 Aug 12 00:45 Makefile 
+-rw-r--r-- 1 tingles tingles 1918 Aug 11 20:09 testingandstuff~ 
+
+
+./tests:
+-rw-r--r-- 1 tingles tingles 3510 Aug 07 11:08 exec.script 
+
+
+./src:
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 10:40 ls.cpp 
+-rw-r--r-- 1 tingles tingles 2496 Aug 07 11:08 main.cpp 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34ma.out[0;00m 
+
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -l -R #now testing with two flags[1P[1P[1@R[C[C[1@l[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C, different order
+.:
+-rw-r--r-- 1 tingles tingles 59 Aug 07 11:09 README.md 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34mls[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 07 11:08 [38;5;34mtests[0;00m 
+-rw-r--r-- 1 tingles tingles 98 Aug 07 11:08 Makefile~ 
+-rw-rw-r-- 1 tingles tingles 0 Aug 12 10:54 ls.script 
+-rw-r--r-- 1 tingles tingles 18026 Aug 07 11:08 LICENSE 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34msrc[0;00m 
+-rw-r--r-- 1 tingles tingles 163 Aug 12 00:45 Makefile 
+-rw-r--r-- 1 tingles tingles 1918 Aug 11 20:09 testingandstuff~ 
+
+
+./tests:
+-rw-r--r-- 1 tingles tingles 3510 Aug 07 11:08 exec.script 
+
+
+./src:
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 10:40 ls.cpp 
+-rw-r--r-- 1 tingles tingles 2496 Aug 07 11:08 main.cpp 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34ma.out[0;00m 
+
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -R -l #now testing with two flags, different order[C[1P[1@a[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+-rw-r--r-- 1 tingles tingles 59 Aug 07 11:09 README.md 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34mls[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 07 11:08 [38;5;34mtests[0;00m 
+-rw-r--r-- 1 tingles tingles 98 Aug 07 11:08 Makefile~ 
+-rw-rw-r-- 1 tingles tingles 0 Aug 12 10:54 ls.script 
+-rw-r--r-- 1 tingles tingles 18026 Aug 07 11:08 LICENSE 
+drwx------ 5 tingles tingles 4096 Aug 12 10:54 [38;5;34m.[0;00m 
+drwxr-xr-x 24 tingles tingles 4096 Aug 12 08:19 [38;5;34m..[0;00m 
+drwx------ 8 tingles tingles 4096 Aug 07 11:09 [38;5;34m.git[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34msrc[0;00m 
+-rw-r--r-- 1 tingles tingles 163 Aug 12 00:45 Makefile 
+-rw-r--r-- 1 tingles tingles 1918 Aug 11 20:09 testingandstuff~ 
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -a -l [K[KR
+.:
+README.md [38;5;34mls[0;00m [38;5;34mtests[0;00m Makefile~ ls.script LICENSE [38;5;34m.[0;00m [38;5;34m..[0;00m [38;5;34m.git[0;00m [38;5;34msrc[0;00m Makefile testingandstuff~ 
+
+./tests:
+[38;5;34m.[0;00m exec.script [38;5;34m..[0;00m 
+
+./src:
+[47m.ls.cpp.swp[0;00m ls.cpp main.cpp [38;5;34m.[0;00m [38;5;34ma.out[0;00m [38;5;34m..[0;00m 
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -a -R[K[K[K[Kra[K[KR -a #same flags, different order
+.:
+README.md [38;5;34mls[0;00m [38;5;34mtests[0;00m Makefile~ ls.script LICENSE [38;5;34m.[0;00m [38;5;34m..[0;00m [38;5;34m.git[0;00m [38;5;34msrc[0;00m Makefile testingandstuff~ 
+
+./tests:
+[38;5;34m.[0;00m exec.script [38;5;34m..[0;00m 
+
+./src:
+[47m.ls.cpp.swp[0;00m ls.cpp main.cpp [38;5;34m.[0;00m [38;5;34ma.out[0;00m [38;5;34m..[0;00m 
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -R -a #same flags, different order[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kl -a -R #testing three flags
+.:
+-rw-r--r-- 1 tingles tingles 59 Aug 07 11:09 README.md 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34mls[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 07 11:08 [38;5;34mtests[0;00m 
+-rw-r--r-- 1 tingles tingles 98 Aug 07 11:08 Makefile~ 
+-rw-rw-r-- 1 tingles tingles 4096 Aug 12 10:56 ls.script 
+-rw-r--r-- 1 tingles tingles 18026 Aug 07 11:08 LICENSE 
+drwx------ 5 tingles tingles 4096 Aug 12 10:54 [38;5;34m.[0;00m 
+drwxr-xr-x 24 tingles tingles 4096 Aug 12 08:19 [38;5;34m..[0;00m 
+drwx------ 8 tingles tingles 4096 Aug 07 11:09 [38;5;34m.git[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34msrc[0;00m 
+-rw-r--r-- 1 tingles tingles 163 Aug 12 00:45 Makefile 
+-rw-r--r-- 1 tingles tingles 1918 Aug 11 20:09 testingandstuff~ 
+
+
+./tests:
+-rw-r--r-- 1 tingles tingles 3510 Aug 07 11:08 exec.script 
+
+
+./src:
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 10:40 ls.cpp 
+-rw-r--r-- 1 tingles tingles 2496 Aug 07 11:08 main.cpp 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34ma.out[0;00m 
+
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -l -a -R #testing three flags[C[C[C[C[C[C[C, different order[1P[1@R[C[C[C[C[C[C[1P[1@l
+.:
+-rw-r--r-- 1 tingles tingles 59 Aug 07 11:09 README.md 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34mls[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 07 11:08 [38;5;34mtests[0;00m 
+-rw-r--r-- 1 tingles tingles 98 Aug 07 11:08 Makefile~ 
+-rw-rw-r-- 1 tingles tingles 4096 Aug 12 10:56 ls.script 
+-rw-r--r-- 1 tingles tingles 18026 Aug 07 11:08 LICENSE 
+drwx------ 5 tingles tingles 4096 Aug 12 10:54 [38;5;34m.[0;00m 
+drwxr-xr-x 24 tingles tingles 4096 Aug 12 08:19 [38;5;34m..[0;00m 
+drwx------ 8 tingles tingles 4096 Aug 07 11:09 [38;5;34m.git[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34msrc[0;00m 
+-rw-r--r-- 1 tingles tingles 163 Aug 12 00:45 Makefile 
+-rw-r--r-- 1 tingles tingles 1918 Aug 11 20:09 testingandstuff~ 
+
+
+./tests:
+-rw-r--r-- 1 tingles tingles 3510 Aug 07 11:08 exec.script 
+
+
+./src:
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 10:40 ls.cpp 
+-rw-r--r-- 1 tingles tingles 2496 Aug 07 11:08 main.cpp 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34ma.out[0;00m 
+
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -la #testing two flgs [K[K[Kags with diff[K[K[K[K[K[K[K[K[K[K,[K with one [K[K[K[K[K[K[K[K[Kcombined
+-rw-r--r-- 1 tingles tingles 59 Aug 07 11:09 README.md 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34mls[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 07 11:08 [38;5;34mtests[0;00m 
+-rw-r--r-- 1 tingles tingles 98 Aug 07 11:08 Makefile~ 
+-rw-rw-r-- 1 tingles tingles 8192 Aug 12 10:56 ls.script 
+-rw-r--r-- 1 tingles tingles 18026 Aug 07 11:08 LICENSE 
+drwx------ 5 tingles tingles 4096 Aug 12 10:54 [38;5;34m.[0;00m 
+drwxr-xr-x 24 tingles tingles 4096 Aug 12 08:19 [38;5;34m..[0;00m 
+drwx------ 8 tingles tingles 4096 Aug 07 11:09 [38;5;34m.git[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34msrc[0;00m 
+-rw-r--r-- 1 tingles tingles 163 Aug 12 00:45 Makefile 
+-rw-r--r-- 1 tingles tingles 1918 Aug 11 20:09 testingandstuff~ 
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -la #testing two flags combined[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ka;[Kl #same two flags, different order
+-rw-r--r-- 1 tingles tingles 59 Aug 07 11:09 README.md 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34mls[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 07 11:08 [38;5;34mtests[0;00m 
+-rw-r--r-- 1 tingles tingles 98 Aug 07 11:08 Makefile~ 
+-rw-rw-r-- 1 tingles tingles 8192 Aug 12 10:56 ls.script 
+-rw-r--r-- 1 tingles tingles 18026 Aug 07 11:08 LICENSE 
+drwx------ 5 tingles tingles 4096 Aug 12 10:54 [38;5;34m.[0;00m 
+drwxr-xr-x 24 tingles tingles 4096 Aug 12 08:19 [38;5;34m..[0;00m 
+drwx------ 8 tingles tingles 4096 Aug 07 11:09 [38;5;34m.git[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34msrc[0;00m 
+-rw-r--r-- 1 tingles tingles 163 Aug 12 00:45 Makefile 
+-rw-r--r-- 1 tingles tingles 1918 Aug 11 20:09 testingandstuff~ 
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -al #same two flags, different order[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KRa
+.:
+README.md [38;5;34mls[0;00m [38;5;34mtests[0;00m Makefile~ ls.script LICENSE [38;5;34m.[0;00m [38;5;34m..[0;00m [38;5;34m.git[0;00m [38;5;34msrc[0;00m Makefile testingandstuff~ 
+
+./tests:
+[38;5;34m.[0;00m exec.script [38;5;34m..[0;00m 
+
+./src:
+[47m.ls.cpp.swp[0;00m ls.cpp main.cpp [38;5;34m.[0;00m [38;5;34ma.out[0;00m [38;5;34m..[0;00m 
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -Ra[K[KaR
+.:
+README.md [38;5;34mls[0;00m [38;5;34mtests[0;00m Makefile~ ls.script LICENSE [38;5;34m.[0;00m [38;5;34m..[0;00m [38;5;34m.git[0;00m [38;5;34msrc[0;00m Makefile testingandstuff~ 
+
+./tests:
+[38;5;34m.[0;00m exec.script [38;5;34m..[0;00m 
+
+./src:
+[47m.ls.cpp.swp[0;00m ls.cpp main.cpp [38;5;34m.[0;00m [38;5;34ma.out[0;00m [38;5;34m..[0;00m 
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -aR[K[KlR
+.:
+-rw-r--r-- 1 tingles tingles 59 Aug 07 11:09 README.md 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34mls[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 07 11:08 [38;5;34mtests[0;00m 
+-rw-r--r-- 1 tingles tingles 98 Aug 07 11:08 Makefile~ 
+-rw-rw-r-- 1 tingles tingles 8192 Aug 12 10:56 ls.script 
+-rw-r--r-- 1 tingles tingles 18026 Aug 07 11:08 LICENSE 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34msrc[0;00m 
+-rw-r--r-- 1 tingles tingles 163 Aug 12 00:45 Makefile 
+-rw-r--r-- 1 tingles tingles 1918 Aug 11 20:09 testingandstuff~ 
+
+
+./tests:
+-rw-r--r-- 1 tingles tingles 3510 Aug 07 11:08 exec.script 
+
+
+./src:
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 10:40 ls.cpp 
+-rw-r--r-- 1 tingles tingles 2496 Aug 07 11:08 main.cpp 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34ma.out[0;00m 
+
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -lR[K[KRl
+.:
+-rw-r--r-- 1 tingles tingles 59 Aug 07 11:09 README.md 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34mls[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 07 11:08 [38;5;34mtests[0;00m 
+-rw-r--r-- 1 tingles tingles 98 Aug 07 11:08 Makefile~ 
+-rw-rw-r-- 1 tingles tingles 12288 Aug 12 10:57 ls.script 
+-rw-r--r-- 1 tingles tingles 18026 Aug 07 11:08 LICENSE 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34msrc[0;00m 
+-rw-r--r-- 1 tingles tingles 163 Aug 12 00:45 Makefile 
+-rw-r--r-- 1 tingles tingles 1918 Aug 11 20:09 testingandstuff~ 
+
+
+./tests:
+-rw-r--r-- 1 tingles tingles 3510 Aug 07 11:08 exec.script 
+
+
+./src:
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 10:40 ls.cpp 
+-rw-r--r-- 1 tingles tingles 2496 Aug 07 11:08 main.cpp 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34ma.out[0;00m 
+
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls 0[K-Ral #testing three flags now
+.:
+-rw-r--r-- 1 tingles tingles 59 Aug 07 11:09 README.md 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34mls[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 07 11:08 [38;5;34mtests[0;00m 
+-rw-r--r-- 1 tingles tingles 98 Aug 07 11:08 Makefile~ 
+-rw-rw-r-- 1 tingles tingles 12288 Aug 12 10:57 ls.script 
+-rw-r--r-- 1 tingles tingles 18026 Aug 07 11:08 LICENSE 
+drwx------ 5 tingles tingles 4096 Aug 12 10:54 [38;5;34m.[0;00m 
+drwxr-xr-x 24 tingles tingles 4096 Aug 12 08:19 [38;5;34m..[0;00m 
+drwx------ 8 tingles tingles 4096 Aug 07 11:09 [38;5;34m.git[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34msrc[0;00m 
+-rw-r--r-- 1 tingles tingles 163 Aug 12 00:45 Makefile 
+-rw-r--r-- 1 tingles tingles 1918 Aug 11 20:09 testingandstuff~ 
+
+
+./tests:
+-rw-r--r-- 1 tingles tingles 3510 Aug 07 11:08 exec.script 
+
+
+./src:
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 10:40 ls.cpp 
+-rw-r--r-- 1 tingles tingles 2496 Aug 07 11:08 main.cpp 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34ma.out[0;00m 
+
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -Ral #testing three flags now[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KlaR #different order
+.:
+-rw-r--r-- 1 tingles tingles 59 Aug 07 11:09 README.md 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34mls[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 07 11:08 [38;5;34mtests[0;00m 
+-rw-r--r-- 1 tingles tingles 98 Aug 07 11:08 Makefile~ 
+-rw-rw-r-- 1 tingles tingles 12288 Aug 12 10:57 ls.script 
+-rw-r--r-- 1 tingles tingles 18026 Aug 07 11:08 LICENSE 
+drwx------ 5 tingles tingles 4096 Aug 12 10:54 [38;5;34m.[0;00m 
+drwxr-xr-x 24 tingles tingles 4096 Aug 12 08:19 [38;5;34m..[0;00m 
+drwx------ 8 tingles tingles 4096 Aug 07 11:09 [38;5;34m.git[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34msrc[0;00m 
+-rw-r--r-- 1 tingles tingles 163 Aug 12 00:45 Makefile 
+-rw-r--r-- 1 tingles tingles 1918 Aug 11 20:09 testingandstuff~ 
+
+
+./tests:
+-rw-r--r-- 1 tingles tingles 3510 Aug 07 11:08 exec.script 
+
+
+./src:
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 10:40 ls.cpp 
+-rw-r--r-- 1 tingles tingles 2496 Aug 07 11:08 main.cpp 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34ma.out[0;00m 
+
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls 0-[K[K-l we[K[K#we[K[Knoe [K[Kw we[K[Ktesting permissions, [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K#now[K[K[Know testing permissions, README.md will be our test subject
+-rw-r--r-- 1 tingles tingles 59 Aug 07 11:09 README.md 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34mls[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 07 11:08 [38;5;34mtests[0;00m 
+-rw-r--r-- 1 tingles tingles 98 Aug 07 11:08 Makefile~ 
+-rw-rw-r-- 1 tingles tingles 12288 Aug 12 10:57 ls.script 
+-rw-r--r-- 1 tingles tingles 18026 Aug 07 11:08 LICENSE 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34msrc[0;00m 
+-rw-r--r-- 1 tingles tingles 163 Aug 12 00:45 Makefile 
+-rw-r--r-- 1 tingles tingles 1918 Aug 11 20:09 testingandstuff~ 
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -l #now testing permissions, README.md will be our test subject[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcj,pd [K[K[K[K[Khmod o+wx README.md #now giving README new permissions
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -l #should ref[K[Kre[K[Keflect new changes in README
+-rw-r--rwx 1 tingles tingles 59 Aug 07 11:09 README.md 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34mls[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 07 11:08 [38;5;34mtests[0;00m 
+-rw-r--r-- 1 tingles tingles 98 Aug 07 11:08 Makefile~ 
+-rw-rw-r-- 1 tingles tingles 16384 Aug 12 10:58 ls.script 
+-rw-r--r-- 1 tingles tingles 18026 Aug 07 11:08 LICENSE 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34msrc[0;00m 
+-rw-r--r-- 1 tingles tingles 163 Aug 12 00:45 Makefile 
+-rw-r--r-- 1 tingles tingles 1918 Aug 11 20:09 testingandstuff~ 
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ chmod o-wx README.md # [Knew changes were r[Kreflected, reverting RAD[K[KEADME back
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls -l #re[K[KREADME should now be as if it were never change[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ks permissions were never changed[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K tehs[K[Khe [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K permissions should now be the origin[K[K[K[K[K[Ksame as the original ones
+-rw-r--r-- 1 tingles tingles 59 Aug 07 11:09 README.md 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34mls[0;00m 
+drwx------ 2 tingles tingles 4096 Aug 07 11:08 [38;5;34mtests[0;00m 
+-rw-r--r-- 1 tingles tingles 98 Aug 07 11:08 Makefile~ 
+-rw-rw-r-- 1 tingles tingles 16384 Aug 12 10:58 ls.script 
+-rw-r--r-- 1 tingles tingles 18026 Aug 07 11:08 LICENSE 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34msrc[0;00m 
+-rw-r--r-- 1 tingles tingles 163 Aug 12 00:45 Makefile 
+-rw-r--r-- 1 tingles tingles 1918 Aug 11 20:09 testingandstuff~ 
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls src #testing one directory, no flags
+ls.cpp main.cpp [38;5;34ma.out[0;00m 
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls src -a #testing wit[K[K[Kone directory, oen flag[K[K[K[K[K[K[Kne flag
+[47m.ls.cpp.swp[0;00m ls.cpp main.cpp [38;5;34m.[0;00m [38;5;34ma.out[0;00m [38;5;34m..[0;00m 
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls src -a #testing one directory, one flag[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kl
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 10:40 ls.cpp 
+-rw-r--r-- 1 tingles tingles 2496 Aug 07 11:08 main.cpp 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34ma.out[0;00m 
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls src -l[KR
+src:
+ls.cpp main.cpp [38;5;34ma.out[0;00m 
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls src -R[Kal #testing with two flags [K, one directory
+-rw-r--r-- 1 tingles tingles 36864 Aug 12 10:40 [47m.ls.cpp.swp[0;00m 
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 10:40 ls.cpp 
+-rw-r--r-- 1 tingles tingles 2496 Aug 07 11:08 main.cpp 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34m.[0;00m 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34ma.out[0;00m 
+drwx------ 5 tingles tingles 4096 Aug 12 10:54 [38;5;34m..[0;00m 
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls src -al #testing with two flags, one directory[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kla #same tow[K[Kwo flags, different ro[K[Kordering
+-rw-r--r-- 1 tingles tingles 36864 Aug 12 10:40 [47m.ls.cpp.swp[0;00m 
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 10:40 ls.cpp 
+-rw-r--r-- 1 tingles tingles 2496 Aug 07 11:08 main.cpp 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34m.[0;00m 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34ma.out[0;00m 
+drwx------ 5 tingles tingles 4096 Aug 12 10:54 [38;5;34m..[0;00m 
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls src -la #same two flags, different ordering[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kr[KR
+src:
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 10:40 ls.cpp 
+-rw-r--r-- 1 tingles tingles 2496 Aug 07 11:08 main.cpp 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34ma.out[0;00m 
+
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls src -lR[K[KRl #same as [K[K[K[K[K[K[Ksa[K[Kame flags, different order
+src:
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 10:40 ls.cpp 
+-rw-r--r-- 1 tingles tingles 2496 Aug 07 11:08 main.cpp 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34ma.out[0;00m 
+
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls src -Rl #same flags, different order[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KaR
+src:
+[47m.ls.cpp.swp[0;00m ls.cpp main.cpp [38;5;34m.[0;00m [38;5;34ma.out[0;00m [38;5;34m..[0;00m 
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls src tests #testing two directories now
+src:
+ls.cpp main.cpp [38;5;34ma.out[0;00m 
+
+tests:
+exec.script 
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls src tests #testing two directories now[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K -a #testing two directories, [K[K with one flag
+src:
+[47m.ls.cpp.swp[0;00m ls.cpp main.cpp [38;5;34m.[0;00m [38;5;34ma.out[0;00m [38;5;34m..[0;00m 
+
+tests:
+[38;5;34m.[0;00m exec.script [38;5;34m..[0;00m 
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls src tests -a #testing two directories with one flag[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kl
+src:
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 10:40 ls.cpp 
+-rw-r--r-- 1 tingles tingles 2496 Aug 07 11:08 main.cpp 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34ma.out[0;00m 
+
+
+tests:
+-rw-r--r-- 1 tingles tingles 3510 Aug 07 11:08 exec.script 
+
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls src tests -l[KR
+src:
+ls.cpp main.cpp [38;5;34ma.out[0;00m 
+
+
+tests:
+exec.script 
+
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls src tests -R[KRa #testing two directories, two flags
+src:
+[47m.ls.cpp.swp[0;00m ls.cpp main.cpp [38;5;34m.[0;00m [38;5;34ma.out[0;00m [38;5;34m..[0;00m 
+
+
+tests:
+[38;5;34m.[0;00m exec.script [38;5;34m..[0;00m 
+
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls src tests -Ra #testing two directories, two flags[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ka [KR #same flags, different order
+src:
+[47m.ls.cpp.swp[0;00m ls.cpp main.cpp [38;5;34m.[0;00m [38;5;34ma.out[0;00m [38;5;34m..[0;00m 
+
+
+tests:
+[38;5;34m.[0;00m exec.script [38;5;34m..[0;00m 
+
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls src tests -aR #same flags, different order[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K-R[KlR
+src:
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 10:40 ls.cpp 
+-rw-r--r-- 1 tingles tingles 2496 Aug 07 11:08 main.cpp 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34ma.out[0;00m 
+
+
+
+tests:
+-rw-r--r-- 1 tingles tingles 3510 Aug 07 11:08 exec.script 
+
+
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls src tests -lR[K[Kla
+src:
+-rw-r--r-- 1 tingles tingles 36864 Aug 12 10:40 [47m.ls.cpp.swp[0;00m 
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 10:40 ls.cpp 
+-rw-r--r-- 1 tingles tingles 2496 Aug 07 11:08 main.cpp 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34m.[0;00m 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34ma.out[0;00m 
+drwx------ 5 tingles tingles 4096 Aug 12 10:54 [38;5;34m..[0;00m 
+
+
+tests:
+drwx------ 2 tingles tingles 4096 Aug 07 11:08 [38;5;34m.[0;00m 
+-rw-r--r-- 1 tingles tingles 3510 Aug 07 11:08 exec.script 
+drwx------ 5 tingles tingles 4096 Aug 12 10:54 [38;5;34m..[0;00m 
+
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls src tests -la[K[KRla #all three flags on two directories
+src:
+-rw-r--r-- 1 tingles tingles 36864 Aug 12 10:40 [47m.ls.cpp.swp[0;00m 
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 10:40 ls.cpp 
+-rw-r--r-- 1 tingles tingles 2496 Aug 07 11:08 main.cpp 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34m.[0;00m 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34ma.out[0;00m 
+drwx------ 5 tingles tingles 4096 Aug 12 10:54 [38;5;34m..[0;00m 
+
+
+
+tests:
+drwx------ 2 tingles tingles 4096 Aug 07 11:08 [38;5;34m.[0;00m 
+-rw-r--r-- 1 tingles tingles 3510 Aug 07 11:08 exec.script 
+drwx------ 5 tingles tingles 4096 Aug 12 10:54 [38;5;34m..[0;00m 
+
+
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ ./ls src tests -Rla #all three flags on two directories[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KalR #same flag[Kgs, different order
+src:
+-rw-r--r-- 1 tingles tingles 36864 Aug 12 10:40 [47m.ls.cpp.swp[0;00m 
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 10:40 ls.cpp 
+-rw-r--r-- 1 tingles tingles 2496 Aug 07 11:08 main.cpp 
+drwx------ 2 tingles tingles 4096 Aug 12 10:41 [38;5;34m.[0;00m 
+-rwxrwxr-x 1 tingles tingles 54093 Aug 12 10:41 [38;5;34ma.out[0;00m 
+drwx------ 5 tingles tingles 4096 Aug 12 10:54 [38;5;34m..[0;00m 
+
+
+
+tests:
+drwx------ 2 tingles tingles 4096 Aug 07 11:08 [38;5;34m.[0;00m 
+-rw-r--r-- 1 tingles tingles 3510 Aug 07 11:08 exec.script 
+drwx------ 5 tingles tingles 4096 Aug 12 10:54 [38;5;34m..[0;00m 
+
+
+
+]0;tingles@Tingles: ~/rshelltingles@Tingles:~/rshell$ exit
+exit
+
+Script done on Tue 12 Aug 2014 11:03:31 AM PDT
