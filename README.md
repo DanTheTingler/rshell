@@ -24,3 +24,7 @@ Alas, I am only a student, and there are some bugs with my program. Here they ar
 5. Running the command echo "hello" will output "hello" instead of the hello that should be output. Difference is the quotes.
 
 6. After running the script command, the user's name will mysteriously disappear while running rshell. This does not occur if the script command is not running.
+
+7. Can't handle IO redirection.
+
+8. Can't handle commands such as ctrl^C, which when typed will exit it out of the shell instead of exiting the current process/command.
