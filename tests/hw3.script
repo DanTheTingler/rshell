@@ -1,0 +1,412 @@
+Script started on Mon 18 Aug 2014 11:05:59 PM PDT
+]0;tingles@Tingles: ~/rshell/srctingles@Tingles:~/rshell/src$ ./a.out
+@Tingles$ ls #showing old   commands without io redirection or pin ping still work
+a.out  b.out  hello.cpp  hw3.script  ls.cpp  pipefunction.txt  result  rshell.cpp
+@Tingles$ ls -l
+total 88
+-rwxrwxr-x 1 tingles tingles 23717 Aug 18 22:17 a.out
+-rwxrwxr-x 1 tingles tingles  9128 Aug 18 18:56 b.out
+-rw-r--r-- 1 tingles tingles   228 Aug 17 00:46 hello.cpp
+-rw-rw-r-- 1 tingles tingles     0 Aug 18 23:05 hw3.script
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 11:20 ls.cpp
+-rw-r--r-- 1 tingles tingles  3413 Aug 17 15:49 pipefunction.txt
+-rw-r--r-- 1 tingles tingles     6 Aug 18 20:26 result
+-rw-r--r-- 1 tingles tingles 15769 Aug 18 21:49 rshell.cpp
+@Tingles$ ls -la
+total 152
+drwx------ 2 tingles tingles  4096 Aug 18 23:05 .
+drwx------ 6 tingles tingles  4096 Aug 18 22:17 ..
+-rwxrwxr-x 1 tingles tingles 23717 Aug 18 22:17 a.out
+-rwxrwxr-x 1 tingles tingles  9128 Aug 18 18:56 b.out
+-rw-r--r-- 1 tingles tingles   228 Aug 17 00:46 hello.cpp
+-rw-rw-r-- 1 tingles tingles     0 Aug 18 23:05 hw3.script
+-rw-r--r-- 1 tingles tingles 22014 Aug 12 11:20 ls.cpp
+-rw-r--r-- 1 tingles tingles 12288 Aug 12 11:45 .main.cpp.swp
+-rw-r--r-- 1 tingles tingles  3413 Aug 17 15:49 pipefunction.txt
+-rw-r--r-- 1 tingles tingles     6 Aug 18 20:26 result
+-rw-r--r-- 1 tingles tingles 15769 Aug 18 21:49 rshell.cpp
+-rw-r--r-- 1 tingles tingles 40960 Aug 18 21:49 .test.cpp.swp
+@Tingles$ ls > test #      test s #should output          redirecti  output of ls from screen to a file th  called test that         
+@Tingles$ ls>test #showing that it works without spaces
+@Tingles$ ls #test didnt exist previously, it now should
+a.out  b.out  hello.cpp  hw3.script  ls.cpp  pipefunction.txt  result  rshell.cpp  test
+@Tingles$ cat < test #test shoudl now have           ld h now have contents of ls
+a.out
+b.out
+hello.cpp
+hw3.script
+ls.cpp
+pipefunction.txt
+result
+rshell.cpp
+test
+@Tingles$ cat<test #showing it doesnt work wi              works without spaces
+a.out
+b.out
+hello.cpp
+hw3.script
+ls.cpp
+pipefunction.txt
+result
+rshell.cpp
+test
+@Tingles$ echo hello world>  > test #should overwrite contents of test
+@Tingles$ cat < test
+hello world
+@Tingles$ ls >> test #should append onto end of test
+@Tingles$ ls>>test #showing it works without spaces
+@Tingles$ cat < test
+hello world
+a.out
+b.out
+hello.cpp
+hw3.script
+ls.cpp
+pipefunction.txt
+result
+rshell.cpp
+test
+a.out
+b.out
+hello.cpp
+hw3.script
+ls.cpp
+pipefunction.txt
+result
+rshell.cpp
+test
+@Tingles$ echo tingles was here >>    test #sho            >test #showing      uld overwrite everything in test
+@Tingles$ cat < test
+tingles was here
+@Tingles$ ./b,.  .out #time to test piping                    | cat #time to test piping, . ./    . b b,.  ,.  .out simply prants da       ints "daniel"
+@Tingles$ d
+a
+n
+i
+e
+l
+
+@Tingles$ ./b,.  .out | sort #this should sort the input of test             output  of .       of ./b,.  .out
+@Tingles$ a
+d
+e
+i
+l
+n
+
+@Tingles$ ps aux #as s   you can see above input was sor   piped properly. now ob      now doing some more pipe testing
+@Tingles$ USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.1  34028  3348 ?        Ss   18:05   0:02 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    18:05   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    18:05   0:00 [ksoftirqd/0]
+root         5  0.0  0.0      0     0 ?        S<   18:05   0:00 [kworker/0:0H]
+root         7  0.0  0.0      0     0 ?        S    18:05   0:01 [rcu_sched]
+root         8  0.0  0.0      0     0 ?        S    18:05   0:02 [rcuos/0]
+root         9  0.0  0.0      0     0 ?        S    18:05   0:00 [rcuos/1]
+root        10  0.0  0.0      0     0 ?        S    18:05   0:00 [rcu_bh]
+root        11  0.0  0.0      0     0 ?        S    18:05   0:00 [rcuob/0]
+root        12  0.0  0.0      0     0 ?        S    18:05   0:00 [rcuob/1]
+root        13  0.0  0.0      0     0 ?        S    18:05   0:00 [migration/0]
+root        14  0.0  0.0      0     0 ?        S    18:05   0:00 [watchdog/0]
+root        15  0.0  0.0      0     0 ?        S    18:05   0:00 [watchdog/1]
+root        16  0.0  0.0      0     0 ?        S    18:05   0:00 [migration/1]
+root        17  0.0  0.0      0     0 ?        S    18:05   0:00 [ksoftirqd/1]
+root        19  0.0  0.0      0     0 ?        S<   18:05   0:00 [kworker/1:0H]
+root        20  0.0  0.0      0     0 ?        S<   18:05   0:00 [khelper]
+root        21  0.0  0.0      0     0 ?        S    18:05   0:00 [kdevtmpfs]
+root        22  0.0  0.0      0     0 ?        S<   18:05   0:00 [netns]
+root        23  0.0  0.0      0     0 ?        S<   18:05   0:00 [writeback]
+root        24  0.0  0.0      0     0 ?        S<   18:05   0:00 [kintegrityd]
+root        25  0.0  0.0      0     0 ?        S<   18:05   0:00 [bioset]
+root        26  0.0  0.0      0     0 ?        S<   18:05   0:00 [kworker/u5:0]
+root        27  0.0  0.0      0     0 ?        S<   18:05   0:00 [kblockd]
+root        29  0.0  0.0      0     0 ?        S<   18:05   0:00 [ata_sff]
+root        30  0.0  0.0      0     0 ?        S    18:05   0:00 [khubd]
+root        31  0.0  0.0      0     0 ?        S<   18:05   0:00 [md]
+root        32  0.0  0.0      0     0 ?        S<   18:05   0:00 [devfreq_wq]
+root        35  0.0  0.0      0     0 ?        S    18:05   0:00 [khungtaskd]
+root        36  0.0  0.0      0     0 ?        S    18:05   0:00 [kswapd0]
+root        37  0.0  0.0      0     0 ?        SN   18:05   0:00 [ksmd]
+root        38  0.0  0.0      0     0 ?        SN   18:05   0:04 [khugepaged]
+root        39  0.0  0.0      0     0 ?        S    18:05   0:00 [fsnotify_mark]
+root        40  0.0  0.0      0     0 ?        S    18:05   0:00 [ecryptfs-kthrea]
+root        41  0.0  0.0      0     0 ?        S<   18:05   0:00 [crypto]
+root        53  0.0  0.0      0     0 ?        S<   18:05   0:00 [kthrotld]
+root        55  0.0  0.0      0     0 ?        S    18:05   0:00 [scsi_eh_0]
+root        56  0.0  0.0      0     0 ?        S    18:05   0:00 [scsi_eh_1]
+root        59  0.0  0.0      0     0 ?        S    18:05   0:00 [scsi_eh_2]
+root        60  0.0  0.0      0     0 ?        S    18:05   0:00 [scsi_eh_3]
+root        81  0.0  0.0      0     0 ?        S<   18:05   0:00 [deferwq]
+root        82  0.0  0.0      0     0 ?        S<   18:05   0:00 [charger_manager]
+root       128  0.0  0.0      0     0 ?        S<   18:05   0:00 [firewire]
+root       129  0.0  0.0      0     0 ?        S<   18:05   0:00 [kpsmoused]
+root       130  0.0  0.0      0     0 ?        S<   18:05   0:00 [firewire_ohci]
+root       208  0.0  0.0      0     0 ?        S<   18:05   0:00 [kdmflush]
+root       209  0.0  0.0      0     0 ?        S<   18:05   0:00 [bioset]
+root       210  0.0  0.0      0     0 ?        S<   18:05   0:00 [kcryptd_io]
+root       211  0.0  0.0      0     0 ?        S<   18:05   0:00 [kcryptd]
+root       212  0.0  0.0      0     0 ?        S<   18:05   0:00 [bioset]
+root       223  0.0  0.0      0     0 ?        S<   18:05   0:00 [kdmflush]
+root       224  0.0  0.0      0     0 ?        S<   18:05   0:00 [bioset]
+root       225  0.0  0.0      0     0 ?        S<   18:05   0:00 [kdmflush]
+root       228  0.0  0.0      0     0 ?        S<   18:05   0:00 [bioset]
+root       248  0.0  0.0      0     0 ?        S    18:05   0:00 [jbd2/dm-1-8]
+root       249  0.0  0.0      0     0 ?        S<   18:05   0:00 [ext4-rsv-conver]
+root       373  0.0  0.0  19608   916 ?        S    18:06   0:00 upstart-udev-bridge --daemon
+root       379  0.0  0.0  51728  1936 ?        Ss   18:06   0:00 /lib/systemd/systemd-udevd --daemon
+root       423  0.0  0.0      0     0 ?        S<   18:06   0:00 [kworker/u5:1]
+root       449  0.0  0.0      0     0 ?        S    18:06   0:00 [rc0]
+root       456  0.0  0.0      0     0 ?        S<   18:06   0:00 [kmemstick]
+root       458  0.0  0.0      0     0 ?        S    18:06   0:00 [r592_io]
+root       462  0.0  0.0      0     0 ?        S<   18:06   0:00 [cfg80211]
+root       476  0.0  0.0      0     0 ?        S<   18:06   0:00 [r852]
+root       516  0.0  0.0      0     0 ?        S<   18:06   0:00 [ext4-rsv-conver]
+root       560  0.0  0.0      0     0 ?        S<   18:06   0:00 [hd-audio0]
+root       638  0.0  0.0  15464   904 ?        S    18:06   0:00 upstart-socket-bridge --daemon
+root       653  0.0  0.2 272692  7828 ?        Ss   18:06   0:00 smbd -F
+root       690  0.0  0.0  15276   628 ?        S    18:06   0:00 upstart-file-bridge --daemon
+syslog     697  0.0  0.0 255844  1576 ?        Ssl  18:06   0:00 rsyslogd
+message+   727  0.0  0.0  40448  2664 ?        Ss   18:06   0:03 dbus-daemon --system --fork
+root       813  0.0  0.1 330236  4404 ?        Ssl  18:06   0:00 /usr/sbin/ModemManager
+root       886  0.0  0.0  43548  1908 ?        Ss   18:06   0:00 /lib/systemd/systemd-logind
+root       889  0.0  0.0  20016   948 tty4     Ss+  18:06   0:00 /sbin/getty -8 38400 tty4
+root       893  0.0  0.0  20016   952 tty5     Ss+  18:06   0:00 /sbin/getty -8 38400 tty5
+root       911  0.0  0.0  20016   944 tty2     Ss+  18:06   0:00 /sbin/getty -8 38400 tty2
+root       912  0.0  0.0  20016   944 tty3     Ss+  18:06   0:00 /sbin/getty -8 38400 tty3
+root       913  0.0  0.0  19292  1448 ?        Ss   18:06   0:00 /usr/sbin/bluetoothd
+root       925  0.0  0.0  20016   944 tty6     Ss+  18:06   0:00 /sbin/getty -8 38400 tty6
+avahi      995  0.0  0.0  32344  1600 ?        S    18:06   0:00 avahi-daemon: running [Tingles.local]
+avahi      996  0.0  0.0  32224   468 ?        S    18:06   0:00 avahi-daemon: chroot helper
+root      1005  0.0  0.0   4368   696 ?        Ss   18:06   0:04 acpid -c /etc/acpi/events -s /var/run/acpid.socket
+root      1041  0.0  0.0      0     0 ?        S<   18:06   0:00 [krfcommd]
+root      1067  0.0  0.0  23656  1032 ?        Ss   18:06   0:00 cron
+root      1081  0.0  0.1  75352  3400 ?        Ss   18:06   0:00 /usr/sbin/cups-browsed
+root      1108  0.0  0.1 292644  4656 ?        SLsl 18:06   0:00 lightdm
+kernoops  1120  0.0  0.0  37144  1012 ?        Ss   18:06   0:00 /usr/sbin/kerneloops
+root      1147  0.0  0.2 356788  7176 ?        Ssl  18:06   0:04 NetworkManager
+root      1173  0.0  0.1 295872  5896 ?        Sl   18:06   0:00 /usr/lib/policykit-1/polkitd --no-debug
+root      1175  0.5  1.0 369676 31464 tty7     Ssl+ 18:06   1:35 /usr/bin/X -core :0 -seat seat0 -auth /var/run/light
+root      1178  0.0  0.1 302484  5264 ?        Sl   18:06   0:00 /usr/lib/accountsservice/accounts-daemon
+whoopsie  1179  0.0  0.2 363376  7316 ?        Ssl  18:06   0:00 whoopsie
+root      1209  0.0  0.0  20016   948 tty1     Ss+  18:06   0:00 /sbin/getty -8 38400 tty1
+root      1219  0.0  0.1 272692  3476 ?        S    18:06   0:00 smbd -F
+root      1333  0.0  0.0      0     0 ?        S    18:06   0:00 [kauditd]
+root      1387  0.0  0.1 170356  3960 ?        Sl   18:06   0:00 lightdm --session-child 12 19
+root      1429  0.0  0.1 304988  4740 ?        Sl   18:06   0:00 /usr/lib/upower/upowerd
+rtkit     1491  0.0  0.0 168916  1308 ?        SNl  18:06   0:00 /usr/lib/rtkit/rtkit-daemon
+root      1502  0.0  0.0      0     0 ?        S    18:06   0:13 [irq/17-b43]
+root      1536  0.0  0.0  30608  2676 ?        Ss   18:06   0:00 /sbin/wpa_supplicant -B -P /run/sendsigs.omit.d/wpas
+colord    1635  0.0  0.2 384792  6436 ?        Sl   18:06   0:00 /usr/lib/colord/colord
+root      1754  0.0  0.1  10232  3700 ?        S    18:06   0:00 /sbin/dhclient -d -sf /usr/lib/NetworkManager/nm-dhc
+nobody    1759  0.0  0.0  35224  1548 ?        S    18:06   0:00 /usr/sbin/dnsmasq --no-resolv --keep-in-foreground -
+root      1914  0.0  0.1 230504  5444 ?        Ss   18:06   0:00 /usr/sbin/winbindd -F
+root      1923  0.0  0.0 191448  2772 ?        Ss   18:06   0:00 nmbd -D
+root      1925  0.0  0.1 230504  3440 ?        S    18:06   0:00 /usr/sbin/winbindd -F
+tingles   1979  0.0  0.2 396464  7044 ?        Sl   18:07   0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+tingles   1992  0.0  0.0  40292  2592 ?        Ss   18:07   0:00 init --user
+tingles   2065  0.0  0.0  10616   312 ?        Ss   18:07   0:00 ssh-agent -s
+tingles   2070  0.0  0.0  41516  2860 ?        Ss   18:07   0:02 dbus-daemon --fork --session --address=unix:abstract
+tingles   2078  0.0  0.0  22300  1156 ?        Ss   18:07   0:00 upstart-event-bridge
+tingles   2083  0.0  0.1  78328  4624 ?        Ss   18:07   0:00 /usr/lib/x86_64-linux-gnu/hud/window-stack-bridge
+tingles   2093  0.0  0.0  22308   632 ?        S    18:07   0:00 upstart-dbus-bridge --daemon --session --user --bus-
+tingles   2095  0.0  0.0  30784   700 ?        S    18:07   0:00 upstart-file-bridge --daemon --user
+tingles   2097  0.0  0.0  22308   400 ?        S    18:07   0:00 upstart-dbus-bridge --daemon --system --user --bus-n
+tingles   2098  0.2  0.1 377120  5876 ?        Ssl  18:07   0:46 /usr/bin/ibus-daemon --daemonize --xim
+tingles   2113  0.0  0.6 749764 19776 ?        Ssl  18:07   0:00 /usr/lib/unity-settings-daemon/unity-settings-daemon
+tingles   2116  0.0  0.9 651412 27488 ?        Ssl  18:07   0:04 /usr/lib/x86_64-linux-gnu/hud/hud-service
+tingles   2119  0.0  0.2 367716  6644 ?        Ssl  18:07   0:00 /usr/lib/at-spi2-core/at-spi-bus-launcher --launch-i
+tingles   2120  0.0  0.4 667364 14108 ?        Ssl  18:07   0:00 gnome-session --session=ubuntu
+tingles   2122  0.0  0.8 585648 25232 ?        Ssl  18:07   0:07 /usr/lib/unity/unity-panel-service
+tingles   2126  0.0  0.0  39380  2084 ?        S    18:07   0:00 /bin/dbus-daemon --config-file=/etc/at-spi2/accessib
+tingles   2130  0.0  0.1 124912  3312 ?        Sl   18:07   0:00 /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-
+tingles   2138  0.0  0.1 196640  3156 ?        Sl   18:07   0:00 /usr/lib/gvfs/gvfsd
+tingles   2142  0.0  0.1 360428  3932 ?        Sl   18:07   0:00 /usr/lib/gvfs/gvfsd-fuse /run/user/1000/gvfs -f -o b
+tingles   2153  0.0  0.1 295664  4304 ?        Sl   18:07   0:00 /usr/lib/ibus/ibus-dconf
+tingles   2154  0.0  0.6 488884 18328 ?        Sl   18:07   0:06 /usr/lib/ibus/ibus-ui-gtk3
+tingles   2158  0.0  0.2 396396  8088 ?        Sl   18:07   0:00 /usr/lib/ibus/ibus-x11 --kill-daemon
+tingles   2177  0.0  0.4 558680 13028 ?        Sl   18:07   0:02 /usr/lib/x86_64-linux-gnu/bamf/bamfdaemon
+tingles   2185  0.0  0.1 219936  4132 ?        Sl   18:07   0:13 /usr/lib/ibus/ibus-engine-simple
+tingles   2193  0.0  0.0 178312  2768 ?        Sl   18:07   0:00 /usr/lib/dconf/dconf-service
+tingles   2201  0.0  0.0  20232   928 ?        S    18:07   0:08 syndaemon -i 1.0 -t -K -R
+tingles   2207  0.0  0.2 373812  6096 ?        S<l  18:07   0:00 /usr/bin/pulseaudio --start --log-target=syslog
+tingles   2215  0.0  0.5 604092 15764 ?        Sl   18:07   0:00 /usr/lib/x86_64-linux-gnu/indicator-keyboard-service
+tingles   2224  0.0  0.1 365520  4444 ?        Ssl  18:07   0:00 /usr/lib/x86_64-linux-gnu/indicator-messages/indicat
+tingles   2228  0.0  0.1 293740  4052 ?        Ssl  18:07   0:00 /usr/lib/x86_64-linux-gnu/indicator-bluetooth/indica
+tingles   2233  0.0  0.1 295776  4376 ?        Ssl  18:07   0:00 /usr/lib/x86_64-linux-gnu/indicator-power/indicator-
+tingles   2237  0.0  0.3 903240 11872 ?        Ssl  18:07   0:00 /usr/lib/x86_64-linux-gnu/indicator-datetime/indicat
+tingles   2241  0.0  0.2 569300  7636 ?        Ssl  18:07   0:00 /usr/lib/x86_64-linux-gnu/indicator-sound/indicator-
+tingles   2242  0.0  0.4 456176 14244 ?        Ssl  18:07   0:00 /usr/lib/x86_64-linux-gnu/indicator-printers/indicat
+tingles   2250  0.0  0.1 840880  5108 ?        Ssl  18:07   0:00 /usr/lib/x86_64-linux-gnu/indicator-session/indicato
+tingles   2251  0.0  0.1 360480  5036 ?        Ssl  18:07   0:00 /usr/lib/x86_64-linux-gnu/indicator-application/indi
+tingles   2282  0.0  0.4 713800 13492 ?        Sl   18:07   0:00 /usr/lib/evolution/evolution-source-registry
+tingles   2300  0.0  0.5 359520 15880 ?        Sl   18:07   0:00 /usr/lib/x86_64-linux-gnu/notify-osd
+tingles   2314  0.3  2.5 1506508 77156 ?       Sl   18:07   1:10 compiz
+tingles   2355  0.0  1.5 834188 46752 ?        Sl   18:07   0:00 /usr/lib/evolution/evolution-calendar-factory
+tingles   2382  0.0  1.4 1113836 45180 ?       Sl   18:07   0:16 nautilus -n
+tingles   2384  0.0  0.3 341380 10340 ?        Sl   18:07   0:00 /usr/lib/policykit-1-gnome/polkit-gnome-authenticati
+tingles   2387  0.0  0.3 558312 10592 ?        Sl   18:07   0:00 /usr/lib/unity-settings-daemon/unity-fallback-mount-
+tingles   2388  0.0  0.7 675264 21296 ?        Sl   18:07   0:03 nm-applet
+tingles   2390  0.0  0.1  28692  5272 ?        S    18:07   0:00 /usr/bin/python /usr/bin/fluxgui
+tingles   2402  0.0  0.2 385304  8252 ?        Sl   18:07   0:00 /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+root      2405  0.0  0.2 460016  6724 ?        Sl   18:07   0:04 /usr/lib/udisks2/udisksd --no-debug
+tingles   2415  0.0  0.1 212440  5436 ?        Sl   18:07   0:00 /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+tingles   2424  0.0  0.1  58120  3540 ?        S    18:07   0:00 /usr/lib/x86_64-linux-gnu/gconf/gconfd-2
+tingles   2430  0.0  0.1 285960  3372 ?        Sl   18:07   0:00 /usr/lib/gvfs/gvfs-afc-volume-monitor
+tingles   2435  0.0  0.0 200276  2836 ?        Sl   18:07   0:00 /usr/lib/gvfs/gvfs-mtp-volume-monitor
+tingles   2438  0.0  0.7 478800 22684 ?        Sl   18:07   0:00 /usr/bin/python /usr/lib/pymodules/python2.7/fluxgui
+tingles   2448  0.0  0.1 374332  4704 ?        Sl   18:07   0:00 /usr/lib/gvfs/gvfsd-trash --spawner :1.6 /org/gtk/gv
+tingles   2454  0.0  0.1 270376  3056 ?        Sl   18:07   0:00 /usr/lib/gvfs/gvfsd-burn --spawner :1.6 /org/gtk/gvf
+tingles   2464  0.0  0.0   5548  1792 pts/2    Ss+  18:07   0:03 /usr/bin/xflux -z 91006 -k 3400 -nofork
+tingles   2475  0.0  0.0 124496  2800 ?        Sl   18:07   0:00 /usr/lib/gvfs/gvfsd-metadata
+tingles   2495  0.0  0.4 457208 12260 ?        Sl   18:07   0:00 telepathy-indicator
+tingles   2502  0.0  0.2 336700  8160 ?        Sl   18:07   0:01 /usr/lib/telepathy/mission-control-5
+tingles   2515  0.0  0.2 405380  7904 ?        Sl   18:07   0:00 zeitgeist-datahub
+tingles   2520  0.0  0.1 363784  5732 ?        Sl   18:07   0:00 /usr/bin/zeitgeist-daemon
+tingles   2527  0.0  0.3 330164 10000 ?        Sl   18:07   0:00 /usr/lib/x86_64-linux-gnu/zeitgeist-fts
+tingles   2538  0.0  0.0  11412   612 ?        S    18:07   0:00 /bin/cat
+tingles   2547  1.0 10.5 1109844 321152 ?      Sl   18:07   3:16 /usr/lib/firefox/firefox
+tingles   2565  0.0  0.1 287224  3944 ?        Sl   18:07   0:00 /usr/lib/libunity-webapps/unity-webapps-service
+tingles   2656  0.0  0.4 507820 14236 ?        Sl   18:08   0:00 update-notifier
+tingles   2678  0.0  3.5 659592 106900 ?       SNl  18:08   0:08 /usr/bin/python3 /usr/bin/update-manager --no-update
+tingles   2747  0.0  0.2 385268  6940 ?        Sl   18:09   0:00 /usr/lib/x86_64-linux-gnu/deja-dup/deja-dup-monitor
+root      3097  0.0  0.1  76856  3656 ?        Ss   18:24   0:00 /usr/sbin/cupsd -f
+lp        3100  0.0  0.0  63156  2236 ?        S    18:24   0:00 /usr/lib/cups/notifier/dbus dbus:// 
+tingles   3207  0.3  0.7 662492 22796 ?        Rl   18:27   0:51 gnome-terminal
+tingles   3217  0.0  0.0  14824   816 ?        S    18:27   0:00 gnome-pty-helper
+tingles   3236  0.0  0.1  27112  4096 pts/23   Ss   18:27   0:00 bash
+tingles   3601  0.0  1.3 722544 39856 ?        Sl   19:56   0:03 gedit /home/tingles/rshell/Makefile
+tingles   3634  0.2  0.1  54448  5988 pts/23   S+   19:57   0:23 vim test.cpp
+tingles   4082  0.0  0.1  27112  4100 pts/10   Ss   20:53   0:00 bash
+tingles   4361  0.0  0.6 744700 18968 ?        Sl   22:21   0:00 /usr/lib/x86_64-linux-gnu/unity-scope-home/unity-sco
+tingles   4377  0.0  0.6 602092 21196 ?        Sl   22:21   0:00 /usr/bin/unity-scope-loader applications/application
+tingles   4378  0.0  0.3 856188 10312 ?        Sl   22:21   0:00 /usr/lib/x86_64-linux-gnu/unity-lens-files/unity-fil
+tingles   4381  0.0  0.2 350252  8948 ?        Sl   22:21   0:00 /usr/lib/x86_64-linux-gnu/unity-lens-music/unity-mus
+root      4549  0.0  0.0      0     0 ?        S    22:39   0:00 [kworker/u4:2]
+root      4565  0.0  0.0      0     0 ?        S    22:47   0:00 [kworker/1:0]
+root      4584  0.0  0.0      0     0 ?        S    22:57   0:00 [kworker/0:1]
+root      4591  0.0  0.0      0     0 ?        S    23:02   0:00 [kworker/0:0]
+root      4594  0.0  0.0      0     0 ?        S    23:03   0:00 [kworker/1:2]
+root      4604  0.0  0.0      0     0 ?        S    23:03   0:00 [kworker/u4:0]
+tingles   4635  0.0  0.0  21876   892 pts/10   S+   23:05   0:00 script hw3.script
+tingles   4636  0.0  0.0  21880   396 pts/10   R+   23:05   0:00 script hw3.script
+tingles   4637  0.0  0.1  27092  3984 pts/24   Ss   23:05   0:00 bash -i
+tingles   4650  0.0  0.0  21104  1464 pts/24   S+   23:06   0:00 ./a.out
+root      4663  0.0  0.0      0     0 ?        S    23:07   0:00 [kworker/0:2]
+root      4676  0.0  0.0      0     0 ?        S    23:09   0:00 [kworker/u4:1]
+tingles   4684  0.0  0.0      0     0 pts/24   Z+   23:09   0:00 [a.out] <defunct>
+tingles   4686  0.0  0.0  22644  1304 pts/24   R+   23:10   0:00 ps aux
+
+@Tingles$ ps    ps aux | tingl     grep tingles #should only oup tput everything in ps       from ps with tingles
+@Tingles$ tingles   1979  0.0  0.2 396464  7044 ?        Sl   18:07   0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+tingles   1992  0.0  0.0  40292  2592 ?        Ss   18:07   0:00 init --user
+tingles   2065  0.0  0.0  10616   312 ?        Ss   18:07   0:00 ssh-agent -s
+tingles   2070  0.0  0.0  41516  2860 ?        Ss   18:07   0:02 dbus-daemon --fork --session --address=unix:abstract=/tmp/dbus-RrDKD4wXFM
+tingles   2078  0.0  0.0  22300  1156 ?        Ss   18:07   0:00 upstart-event-bridge
+tingles   2083  0.0  0.1  78328  4624 ?        Ss   18:07   0:00 /usr/lib/x86_64-linux-gnu/hud/window-stack-bridge
+tingles   2093  0.0  0.0  22308   632 ?        S    18:07   0:00 upstart-dbus-bridge --daemon --session --user --bus-name session
+tingles   2095  0.0  0.0  30784   700 ?        S    18:07   0:00 upstart-file-bridge --daemon --user
+tingles   2097  0.0  0.0  22308   400 ?        S    18:07   0:00 upstart-dbus-bridge --daemon --system --user --bus-name system
+tingles   2098  0.2  0.1 377120  5876 ?        Ssl  18:07   0:46 /usr/bin/ibus-daemon --daemonize --xim
+tingles   2113  0.0  0.6 749764 19776 ?        Ssl  18:07   0:00 /usr/lib/unity-settings-daemon/unity-settings-daemon
+tingles   2116  0.0  0.9 651412 27488 ?        Ssl  18:07   0:04 /usr/lib/x86_64-linux-gnu/hud/hud-service
+tingles   2119  0.0  0.2 367716  6644 ?        Ssl  18:07   0:00 /usr/lib/at-spi2-core/at-spi-bus-launcher --launch-immediately
+tingles   2120  0.0  0.4 667364 14108 ?        Ssl  18:07   0:00 gnome-session --session=ubuntu
+tingles   2122  0.0  0.8 585648 25232 ?        Ssl  18:07   0:07 /usr/lib/unity/unity-panel-service
+tingles   2126  0.0  0.0  39380  2084 ?        S    18:07   0:00 /bin/dbus-daemon --config-file=/etc/at-spi2/accessibility.conf --nofork --print-address 3
+tingles   2130  0.0  0.1 124912  3312 ?        Sl   18:07   0:00 /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+tingles   2138  0.0  0.1 196640  3156 ?        Sl   18:07   0:00 /usr/lib/gvfs/gvfsd
+tingles   2142  0.0  0.1 360428  3932 ?        Sl   18:07   0:00 /usr/lib/gvfs/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+tingles   2153  0.0  0.1 295664  4304 ?        Sl   18:07   0:00 /usr/lib/ibus/ibus-dconf
+tingles   2154  0.0  0.6 488884 18328 ?        Sl   18:07   0:06 /usr/lib/ibus/ibus-ui-gtk3
+tingles   2158  0.0  0.2 396396  8088 ?        Sl   18:07   0:00 /usr/lib/ibus/ibus-x11 --kill-daemon
+tingles   2177  0.0  0.4 558680 13028 ?        Sl   18:07   0:02 /usr/lib/x86_64-linux-gnu/bamf/bamfdaemon
+tingles   2185  0.0  0.1 219936  4132 ?        Sl   18:07   0:13 /usr/lib/ibus/ibus-engine-simple
+tingles   2193  0.0  0.0 178312  2768 ?        Sl   18:07   0:00 /usr/lib/dconf/dconf-service
+tingles   2201  0.0  0.0  20232   928 ?        S    18:07   0:08 syndaemon -i 1.0 -t -K -R
+tingles   2207  0.0  0.2 373812  6096 ?        S<l  18:07   0:00 /usr/bin/pulseaudio --start --log-target=syslog
+tingles   2215  0.0  0.5 604092 15764 ?        Sl   18:07   0:00 /usr/lib/x86_64-linux-gnu/indicator-keyboard-service --use-gtk
+tingles   2224  0.0  0.1 365520  4444 ?        Ssl  18:07   0:00 /usr/lib/x86_64-linux-gnu/indicator-messages/indicator-messages-service
+tingles   2228  0.0  0.1 293740  4052 ?        Ssl  18:07   0:00 /usr/lib/x86_64-linux-gnu/indicator-bluetooth/indicator-bluetooth-service
+tingles   2233  0.0  0.1 295776  4376 ?        Ssl  18:07   0:00 /usr/lib/x86_64-linux-gnu/indicator-power/indicator-power-service
+tingles   2237  0.0  0.3 903240 11872 ?        Ssl  18:07   0:00 /usr/lib/x86_64-linux-gnu/indicator-datetime/indicator-datetime-service
+tingles   2241  0.0  0.2 569300  7636 ?        Ssl  18:07   0:00 /usr/lib/x86_64-linux-gnu/indicator-sound/indicator-sound-service
+tingles   2242  0.0  0.4 456176 14244 ?        Ssl  18:07   0:00 /usr/lib/x86_64-linux-gnu/indicator-printers/indicator-printers-service
+tingles   2250  0.0  0.1 840880  5108 ?        Ssl  18:07   0:00 /usr/lib/x86_64-linux-gnu/indicator-session/indicator-session-service
+tingles   2251  0.0  0.1 360480  5036 ?        Ssl  18:07   0:00 /usr/lib/x86_64-linux-gnu/indicator-application/indicator-application-service
+tingles   2282  0.0  0.4 713800 13492 ?        Sl   18:07   0:00 /usr/lib/evolution/evolution-source-registry
+tingles   2300  0.0  0.5 359520 15880 ?        Sl   18:07   0:00 /usr/lib/x86_64-linux-gnu/notify-osd
+tingles   2314  0.3  2.5 1506428 77156 ?       Sl   18:07   1:10 compiz
+tingles   2355  0.0  1.5 834188 46752 ?        Sl   18:07   0:00 /usr/lib/evolution/evolution-calendar-factory
+tingles   2382  0.0  1.4 1113836 45180 ?       Sl   18:07   0:16 nautilus -n
+tingles   2384  0.0  0.3 341380 10340 ?        Sl   18:07   0:00 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+tingles   2387  0.0  0.3 558312 10592 ?        Sl   18:07   0:00 /usr/lib/unity-settings-daemon/unity-fallback-mount-helper
+tingles   2388  0.0  0.7 675264 21296 ?        Sl   18:07   0:03 nm-applet
+tingles   2390  0.0  0.1  28692  5272 ?        S    18:07   0:00 /usr/bin/python /usr/bin/fluxgui
+tingles   2402  0.0  0.2 385304  8252 ?        Sl   18:07   0:00 /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+tingles   2415  0.0  0.1 212440  5436 ?        Sl   18:07   0:00 /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+tingles   2424  0.0  0.1  58120  3540 ?        S    18:07   0:00 /usr/lib/x86_64-linux-gnu/gconf/gconfd-2
+tingles   2430  0.0  0.1 285960  3372 ?        Sl   18:07   0:00 /usr/lib/gvfs/gvfs-afc-volume-monitor
+tingles   2435  0.0  0.0 200276  2836 ?        Sl   18:07   0:00 /usr/lib/gvfs/gvfs-mtp-volume-monitor
+tingles   2438  0.0  0.7 478800 22684 ?        Sl   18:07   0:00 /usr/bin/python /usr/lib/pymodules/python2.7/fluxgui/fluxgui.py
+tingles   2448  0.0  0.1 374332  4704 ?        Sl   18:07   0:00 /usr/lib/gvfs/gvfsd-trash --spawner :1.6 /org/gtk/gvfs/exec_spaw/0
+tingles   2454  0.0  0.1 270376  3056 ?        Sl   18:07   0:00 /usr/lib/gvfs/gvfsd-burn --spawner :1.6 /org/gtk/gvfs/exec_spaw/1
+tingles   2464  0.0  0.0   5548  1792 pts/2    Ss+  18:07   0:03 /usr/bin/xflux -z 91006 -k 3400 -nofork
+tingles   2475  0.0  0.0 124496  2800 ?        Sl   18:07   0:00 /usr/lib/gvfs/gvfsd-metadata
+tingles   2495  0.0  0.4 457208 12260 ?        Sl   18:07   0:00 telepathy-indicator
+tingles   2502  0.0  0.2 336700  8160 ?        Sl   18:07   0:01 /usr/lib/telepathy/mission-control-5
+tingles   2515  0.0  0.2 405380  7904 ?        Sl   18:07   0:00 zeitgeist-datahub
+tingles   2520  0.0  0.1 363784  5732 ?        Sl   18:07   0:00 /usr/bin/zeitgeist-daemon
+tingles   2527  0.0  0.3 330164 10000 ?        Sl   18:07   0:00 /usr/lib/x86_64-linux-gnu/zeitgeist-fts
+tingles   2538  0.0  0.0  11412   612 ?        S    18:07   0:00 /bin/cat
+tingles   2547  1.0 10.5 1109844 321416 ?      Sl   18:07   3:16 /usr/lib/firefox/firefox
+tingles   2565  0.0  0.1 287224  3944 ?        Sl   18:07   0:00 /usr/lib/libunity-webapps/unity-webapps-service
+tingles   2656  0.0  0.4 507820 14236 ?        Sl   18:08   0:00 update-notifier
+tingles   2678  0.0  3.5 659592 106900 ?       SNl  18:08   0:08 /usr/bin/python3 /usr/bin/update-manager --no-update --no-focus-on-map
+tingles   2747  0.0  0.2 385268  6940 ?        Sl   18:09   0:00 /usr/lib/x86_64-linux-gnu/deja-dup/deja-dup-monitor
+tingles   3207  0.3  0.7 662492 22796 ?        Sl   18:27   0:52 gnome-terminal
+tingles   3217  0.0  0.0  14824   816 ?        S    18:27   0:00 gnome-pty-helper
+tingles   3236  0.0  0.1  27112  4096 pts/23   Ss   18:27   0:00 bash
+tingles   3601  0.0  1.3 722544 39856 ?        Sl   19:56   0:03 gedit /home/tingles/rshell/Makefile
+tingles   3634  0.2  0.1  54448  5988 pts/23   S+   19:57   0:23 vim test.cpp
+tingles   4082  0.0  0.1  27112  4100 pts/10   Ss   20:53   0:00 bash
+tingles   4361  0.0  0.6 744700 18968 ?        Sl   22:21   0:00 /usr/lib/x86_64-linux-gnu/unity-scope-home/unity-scope-home
+tingles   4377  0.0  0.6 602092 21196 ?        Sl   22:21   0:00 /usr/bin/unity-scope-loader applications/applications.scope applications/scopes.scope commands.scope
+tingles   4378  0.0  0.3 856188 10312 ?        Sl   22:21   0:00 /usr/lib/x86_64-linux-gnu/unity-lens-files/unity-files-daemon
+tingles   4381  0.0  0.2 350252  8948 ?        Sl   22:21   0:00 /usr/lib/x86_64-linux-gnu/unity-lens-music/unity-music-daemon
+tingles   4635  0.0  0.0  21876   892 pts/10   S+   23:05   0:00 script hw3.script
+tingles   4636  0.0  0.0  21880   396 pts/10   S+   23:05   0:00 script hw3.script
+tingles   4637  0.0  0.1  27092  3984 pts/24   Ss   23:05   0:00 bash -i
+tingles   4650  0.0  0.0  21104  1464 pts/24   S+   23:06   0:00 ./a.out
+tingles   4687  0.0  0.0      0     0 pts/24   Z+   23:10   0:00 [a.out] <defunct>
+tingles   4691  0.0  0.0  22644  1304 pts/24   R+   23:10   0:00 ps aux
+tingles   4692  0.0  0.0  15944   908 pts/24   S+   23:10   0:00 grep tingles
+
+@Tingles$ ps aux | head #shoudl onl      ld only output first 10
+@Tingles$ USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.1  34028  3348 ?        Ss   18:05   0:02 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    18:05   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    18:05   0:00 [ksoftirqd/0]
+root         5  0.0  0.0      0     0 ?        S<   18:05   0:00 [kworker/0:0H]
+root         7  0.0  0.0      0     0 ?        S    18:05   0:01 [rcu_sched]
+root         8  0.0  0.0      0     0 ?        S    18:05   0:02 [rcuos/0]
+root         9  0.0  0.0      0     0 ?        S    18:05   0:00 [rcuos/1]
+root        10  0.0  0.0      0     0 ?        S    18:05   0:00 [rcu_bh]
+root        11  0.0  0.0      0     0 ?        S    18:05   0:00 [rcuob/0]
+
+@Tingles$ ps aux | tail # shou     should only po  output last 10
+@Tingles$ tingles   4636  0.0  0.0  21880   396 pts/10   S+   23:05   0:00 script hw3.script
+tingles   4637  0.0  0.1  27092  3984 pts/24   Ss   23:05   0:00 bash -i
+tingles   4650  0.0  0.0  21104  1464 pts/24   S+   23:06   0:00 ./a.out
+root      4663  0.0  0.0      0     0 ?        S    23:07   0:00 [kworker/0:2]
+root      4676  0.0  0.0      0     0 ?        S    23:09   0:00 [kworker/u4:1]
+tingles   4696  0.0  0.0      0     0 pts/24   Z+   23:10   0:00 [ps] <defunct>
+tingles   4697  0.0  0.0      0     0 pts/24   Z+   23:10   0:00 [head] <defunct>
+tingles   4698  0.0  0.0      0     0 pts/24   Z+   23:10   0:00 [a.out] <defunct>
+tingles   4700  0.0  0.0  22644  1304 pts/24   R+   23:10   0:00 ps aux
+tingles   4701  0.0  0.0  11432   680 pts/24   S+   23:10   0:00 tail
+
+@Tingles$ exit
+]0;tingles@Tingles: ~/rshell/srctingles@Tingles:~/rshell/src$ ex[K[Kexit
+exit
+
+Script done on Mon 18 Aug 2014 11:11:00 PM PDT
