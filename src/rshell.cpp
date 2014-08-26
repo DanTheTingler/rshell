@@ -20,6 +20,12 @@ void output(char str[], char *argv[]);
 void pipe(char *arg[], char *arg2[], bool amper);
 void pipeconvert(char str[], char *argv[]);
 void pipechaining(char *argv[], bool amper);
+void getCurrentPath();
+void sig_handler(int signum);
+char *allpaths(const char *name);
+char **argmodifier(const char *paths);
+char *finalpathmod(char *path, char *command);
+
 
 int main(int argc, char *argv[])
 {
@@ -49,6 +55,12 @@ int main(int argc, char *argv[])
         cout << "$ "; //bash 
         cin.getline(str, 1024); //get user input
         
+        //this is for ctrl-C
+        if(signal(SIGINT, sig_handler) == SIG_ERR)
+        {
+            perror("There was an error with signal:");                
+        }
+    
 
         //check to see if user has entered special characters
         for(int p  = 0; p < 1024; p++)
@@ -79,13 +91,55 @@ int main(int argc, char *argv[])
             }
 
         }
+	    
+        
+        //this is for cd
+        if(str[0] == 'c' && str[1] == 'd')
+        {
+            int pos = 0;
 
-        if(strcmp(str, "exit") == 0) //check to see if user has typed exit
+            for(int p = 0; p < 1024; p++) //checks to see where the space between cd and the user input is
+            {
+                if(str[p] == ' ')
+                {
+                    pos = p;
+                }
+            }
+
+            char a2[1024] = {0};
+        
+        
+            for(int f = 0, d = pos+1; d < 1024; d++, f++) //this will contain any user input after cd
+            {
+                a2[f] = str[d];
+            }
+            
+            if(pos == 0) //if there was no space, then that means user will go to home directory
+            {
+                if(chdir(getenv("HOME")) == -1)
+                {
+                    perror("Error with chdir");
+                }
+            }
+            else //else cd to wherever they typed
+            {
+                if(chdir(a2) == -1)
+                {
+                    perror("Error with chdir");
+                }
+            }
+            
+            //this outputs the user's current path
+            getCurrentPath();
+        }
+
+        else if(strcmp(str, "exit") == 0) //check to see if user has typed exit
         {
             exit(1); //if so, exit the program
         }
+	
         
-        if(fcarrot) //if > was typed, call the function for it
+        else if(fcarrot) //if > was typed, call the function for it
         {
             input(str, argv);
         }
@@ -110,9 +164,78 @@ int main(int argc, char *argv[])
             reg(str, argv);
         }
 
+        continue;
+
     }
 
     return 0;
+}
+
+//this function is the sig_handler for ctrl-C, makes sure that the program won't exit
+void sig_handler(int signum)
+{
+    if(signal(SIGINT,SIG_IGN) == SIG_ERR)
+    {
+        perror("There was an error with signal");
+    }
+    cout << endl;
+}
+
+//function used to get the current working directory/path
+void getCurrentPath()
+{
+    char path[1024] = {0};
+    if(getcwd(path, sizeof(path)) != NULL)
+    {
+        cout << path << endl;
+    }
+    else //error checking
+    {
+        perror("There was an error with getcwd");
+    }
+}
+
+//function used to get the path so we can run user input
+char *allpaths(const char *name)
+{
+    char *pathing = getenv(name);
+    if(pathing == NULL)
+    {
+        perror("There was a problem with getenv");
+    }
+    return pathing;
+}
+
+//converts the path so that it will be useable
+char **argmodifier(char *paths)
+{
+    int d = 0;
+
+    char **argm = new char* [2048];
+
+    char *tokens = strtok(paths, " :"); //parse input using strtok
+    while (tokens != NULL) 
+    {
+        argm[d] = tokens; //put parsed commands into arg
+        d++; //incrememnt to the next part of arg
+        tokens = strtok(NULL, " :"); //continue parsing
+    }
+
+    argm[d] = NULL; //set the end of arg to NULL to avoid seg fault
+ 
+    return argm;
+}
+
+//this combines the user input with the path
+char *finalpathmod(char *path, char *command)
+{
+    char *finalpath = new char[1024];
+    strcpy(finalpath, path);
+    strcat(finalpath, "/");
+    strcat(finalpath, command);
+
+    return finalpath;
+
 }
 
 
@@ -133,6 +256,15 @@ string remove_char(const string &input, char to_remove)
 //function used if no special io redirection/piping are used
 void reg(char str[], char *argv[])
 {
+    bool succeed = false;
+    char *pathing = allpaths("PATH");
+    char cpathing[1024] = {0};
+
+    strcpy(cpathing, pathing);
+
+    char **westbrook = argmodifier(cpathing);
+    char *kd = new char[1024];
+
     bool amper = false;
     int i = 0;
 
@@ -147,9 +279,6 @@ void reg(char str[], char *argv[])
         token = strtok(NULL, " "); //continue parsing
     }
 
-    arg[i] = NULL; //set the end of arg to NULL to avoid seg fault
-   
-    
     //search for the various needed elements
     for(int d = 0; d < i; d++)
     {
@@ -172,12 +301,26 @@ void reg(char str[], char *argv[])
 
     else if(pid == 0) //child process, which means we want to run exec
     {
-
-        if(execvp(arg[0], arg) < 0 ) //calls the command and its flags
+        
+        for(int f = 0; westbrook[f] != NULL; f++)
         {
-            perror("execvp failed"); //error check/message
+            kd = finalpathmod(westbrook[f], arg[0]);
+            if(execv(kd, arg) == -1) //if execv wasn't successful then keep going
+            {
+                continue;
+            }
+            else //if execv is successful, no need to check the other paths anymore
+            {
+                succeed = true;
+                break;
+            }
         }
-       
+
+        if(!succeed)
+        {
+            perror("Error with execv");
+        }
+
         exit(1);
     }
 
@@ -187,17 +330,27 @@ void reg(char str[], char *argv[])
         exit(1);
     }
 
+    //delete[] westbrook;
     delete[] arg;
 }
 
 //function used if the > is called
 void input(char str[], char *argv[])
 {
+    bool succeed = false;
+    char *pathing = allpaths("PATH");
+    char cpathing[1024] = {0};
+
+    strcpy(cpathing, pathing);
+
+    char **westbrook = argmodifier(cpathing);
+    char *kd = new char[1024];
+    
+
     bool amper = false;
     int i = 0;
     int pos = 0;
 
-     
     //split str depending on where the > is.
     for(int p = 0; p < 1024; p++)
     {
@@ -284,12 +437,28 @@ void input(char str[], char *argv[])
 
         if(dup2(fd, 1) == -1)
         {
-            perror("There was a problem with dup2:");
+            perror("There was a problem with dup2");
         }
 
-        if(execvp(arg[0], arg) < 0 ) //calls the command and its flags
+        for(int f = 0; westbrook[f] != NULL; f++)
         {
-            perror("execvp failed"); //error check/message
+            kd = finalpathmod(westbrook[f], arg[0]);
+            if(execv(kd, arg) == -1) //if execv wasn't successful then keep going
+            {
+                continue;
+            }
+            else //if execv is successful, no need to check the other paths anymore
+            {
+                succeed = true;
+                break;
+            }
+
+            
+        }
+
+        if(!succeed)
+        {
+            perror("Error with execv");
         }
        
         exit(1);
@@ -297,7 +466,7 @@ void input(char str[], char *argv[])
 
     else //error check for fork: fork has failed, output error message
     {
-        perror("fork has failed: ");
+        perror("fork has failed");
         exit(1);
     }
 
@@ -308,11 +477,19 @@ void input(char str[], char *argv[])
 //function used if the >> is called
 void dinput(char str[], char *argv[])
 {
+    bool succeed = false;
+    char *pathing = allpaths("PATH");
+    char cpathing[1024] = {0};
+
+    strcpy(cpathing, pathing);
+
+    char **westbrook = argmodifier(cpathing);
+    char *kd = new char[1024];
+
     bool amper = false;
     int i = 0;
     int pos = 0, pos1 = 0;
 
-     
     //split str depending on where the > is.
     for(int p = 0; p < 1024; p++)
     {
@@ -404,9 +581,25 @@ void dinput(char str[], char *argv[])
             perror("There was a problem with dup2:");
         }
 
-        if(execvp(arg[0], arg) < 0 ) //calls the command and its flags
+        for(int f = 0; westbrook[f] != NULL; f++)
         {
-            perror("execvp failed"); //error check/message
+            kd = finalpathmod(westbrook[f], arg[0]);
+            if(execv(kd, arg) == -1) //if execv wasn't successful then keep going
+            {
+                continue;
+            }
+            else //if execv is successful, no need to check the other paths anymore
+            {
+                succeed = true;
+                break;
+            }
+
+            
+        }
+
+        if(!succeed)
+        {
+            perror("Error with execv");
         }
        
         exit(1);
@@ -424,11 +617,20 @@ void dinput(char str[], char *argv[])
 //function used if < is called
 void output(char str[], char *argv[])
 {
+    bool succeed = false; //bool used to check if execv fails later
+    char *pathing = allpaths("PATH"); //this stores the contents of PATH into a char pointer pathing
+    char cpathing[1024] = {0}; //convert pathing to a char array
+
+    strcpy(cpathing, pathing); //copy pathing into cpathing
+
+    char **westbrook = argmodifier(cpathing); //call argmodifier on cpathing to conver it
+    char *kd = new char[1024]; //kd will be used later
+
+
     bool amper = false;
     int i = 0;
     int pos = 0;
 
-     
     //split str depending on where the > is.
     for(int p = 0; p < 1024; p++)
     {
@@ -524,10 +726,26 @@ void output(char str[], char *argv[])
             perror("There was an error with dup");
         }
 
-        if(execvp(arg[0], arg) < 0 ) //calls the command and its flags
+        for(int f = 0; westbrook[f] != NULL; f++)
         {
-            perror("execvp failed"); //error check/message
+            kd = finalpathmod(westbrook[f], arg[0]);
+            if(execv(kd, arg) == -1) //if execv wasn't successful then keep going
+            {
+                continue;
+            }
+            else //if execv is successful, no need to check the other paths anymore
+            {
+                succeed = true;
+                break;
+            }
+            
         }
+
+        if(!succeed)
+        {
+            perror("Error with execv");
+        }
+
        
         exit(1);
     }
@@ -628,6 +846,16 @@ void pipeconvert(char str[], char *argv[])
 //function used if | is called, second part of the two piping functions
 void pipechaining(char *arg2[], bool amper)
 {
+    bool succeed = false;
+    char *pathing = allpaths("PATH");
+    char cpathing[1024] = {0};
+
+    strcpy(cpathing, pathing);
+
+    char **westbrook = argmodifier(cpathing);
+    char *kd = new char[1024];
+
+
     int pid2 = fork();
     if(pid2 == -1) //error checking for the fork
     {
@@ -636,9 +864,24 @@ void pipechaining(char *arg2[], bool amper)
 
     else if(pid2 == 0) //child function
     {
-        if(execvp(arg2[0], arg2) == -1)
+        for(int f = 0; westbrook[f] != NULL; f++)
         {
-            perror("Error with execvp:");
+            kd = finalpathmod(westbrook[f], arg2[0]);
+            if(execv(kd, arg2) == -1) //if execv wasn't successful then keep going
+            {
+                continue;
+            }
+            else //if execv is successful, no need to check the other paths anymore
+            {
+                succeed = true;
+                break;
+            }
+            
+        }
+
+        if(!succeed)
+        {
+            perror("Error with execv");
         }
         
         exit(1);
@@ -657,6 +900,17 @@ void pipechaining(char *arg2[], bool amper)
 //function used if | is called
 void pipe(char *arg[], char *arg2[], bool amper)
 {
+    bool succeed = false;
+    char *pathing = allpaths("PATH");
+    char cpathing[1024] = {0};
+
+    strcpy(cpathing, pathing);
+
+    char **westbrook = argmodifier(cpathing);
+    char *kd = new char[1024];
+
+
+    
     //PIPING STARTS HERE
     int fd[2];
     if(pipe(fd) == -1)
@@ -686,11 +940,26 @@ void pipe(char *arg[], char *arg2[], bool amper)
         }
     
         //call execvp on the first part
-        if(execvp(arg[0], arg) < 0)
+        for(int f = 0; westbrook[f] != NULL; f++)
         {
-            perror("Error with exec1");
+            kd = finalpathmod(westbrook[f], arg[0]);
+            if(execv(kd, arg) == -1) //if execv wasn't successful then keep going
+            {
+                continue;
+            }
+            else //if execv is successful, no need to check the other paths anymore
+            {
+                succeed = true;
+                break;
+            }
+            
         }
 
+        if(!succeed)
+        {
+            perror("Error with execv");
+        }
+        
         exit(1);
     }
 
@@ -732,5 +1001,4 @@ void pipe(char *arg[], char *arg2[], bool amper)
         perror("Error with dup2");
     }
     cout << flush;
-} 
-
+}

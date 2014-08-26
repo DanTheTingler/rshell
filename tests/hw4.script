@@ -1,0 +1,383 @@
+Script started on Mon 25 Aug 2014 11:50:37 AM PDT
+]0;dting001@kilo-27:~/Desktop/rshell/src[?1034h~/Desktop/rshell/src
+dting001@kilo-27 $ ls[K[K./a.out
+dting001@kilo-27.cs.ucr.edu$ ls #testing commands with e         ds using execv and PATh H
+a.out  hw4.script  ls.cpp  result  rshell.cpp  text
+dting001@kilo-27.cs.ucr.edu$ ls -la 
+total 84
+-rwxr-xr-x 1 dting001 classes 28438 Aug 24 23:53 a.out
+-rw-r--r-- 1 dting001 classes     0 Aug 25 11:50 hw4.script
+-rwxr-xr-x 1 dting001 classes 22014 Aug 12 11:20 ls.cpp
+-rwxr-xr-x 1 dting001 classes     3 Aug 20 13:44 result
+-rwxr-xr-x 1 dting001 classes 22535 Aug 24 23:53 rshell.cpp
+-rwxr-xr-x 1 dting001 classes    48 Aug 24 21:46 text
+dting001@kilo-27.cs.ucr.edu$ ls -la
+total 84
+drwx------ 2 dting001 classes   160 Aug 25 11:50 .
+drwx------ 5 dting001 classes   180 Aug 21 10:19 ..
+-rwxr-xr-x 1 dting001 classes 28438 Aug 24 23:53 a.out
+-rw-r--r-- 1 dting001 classes     0 Aug 25 11:50 hw4.script
+-rwxr-xr-x 1 dting001 classes 22014 Aug 12 11:20 ls.cpp
+-rwxr-xr-x 1 dting001 classes     3 Aug 20 13:44 result
+-rwxr-xr-x 1 dting001 classes 22535 Aug 24 23:53 rshell.cpp
+-rwxr-xr-x 1 dting001 classes    48 Aug 24 21:46 text
+dting001@kilo-27.cs.ucr.edu$ ls - la   l -a
+total 84
+drwx------ 2 dting001 classes   160 Aug 25 11:50 .
+drwx------ 5 dting001 classes   180 Aug 21 10:19 ..
+-rwxr-xr-x 1 dting001 classes 28438 Aug 24 23:53 a.out
+-rw-r--r-- 1 dting001 classes     0 Aug 25 11:50 hw4.script
+-rwxr-xr-x 1 dting001 classes 22014 Aug 12 11:20 ls.cpp
+-rwxr-xr-x 1 dting001 classes     3 Aug 20 13:44 result
+-rwxr-xr-x 1 dting001 classes 22535 Aug 24 23:53 rshell.cpp
+-rwxr-xr-x 1 dting001 classes    48 Aug 24 21:46 text
+dting001@kilo-27.cs.ucr.edu$ echo hello world
+hello world
+dting001@kilo-27.cs.ucr.edu$ cat text
+a.out
+blah.script
+ls.cpp
+result
+rshell.cpp
+text
+dting001@kilo-27.cs.ucr.edu$ cd ..
+/class/classes/dting001/Desktop/rshell
+dting001@kilo-27.cs.ucr.edu$ cd src
+/class/classes/dting001/Desktop/rshell/src
+dting001@kilo-27.cs.ucr.edu$ cd
+/class/classes/dting001
+dting001@kilo-27.cs.ucr.edu$ cd    ls
+C:\nppdf32Log\debuglog.txt  Desktop  Documents	Downloads  Music  Pictures  Public  Templates  Videos
+dting001@kilo-27.cs.ucr.edu$ cd Desktop
+/class/classes/dting001/Desktop
+dting001@kilo-27.cs.ucr.edu$ ls
+rshell
+dting001@kilo-27.cs.ucr.edu$ cd rshell
+/class/classes/dting001/Desktop/rshell
+dting001@kilo-27.cs.ucr.edu$ ls
+a.out  LICENSE	Makefile  README.md  src  tests
+dting001@kilo-27.cs.ucr.edu$ cd src
+/class/classes/dting001/Desktop/rshell/src
+dting001@kilo-27.cs.ucr.edu$ l cd ..
+/class/classes/dting001/Desktop/rshell
+dting001@kilo-27.cs.ucr.edu$ cd ..
+/class/classes/dting001/Desktop
+dting001@kilo-27.cs.ucr.edu$ cd rshell/src
+/class/classes/dting001/Desktop/rshell/src
+dting001@kilo-27.cs.ucr.edu$ ls > text
+dting001@kilo-27.cs.ucr.edu$ cat < text 
+a.out
+hw4.script
+ls.cpp
+result
+rshell.cpp
+text
+dting001@kilo-27.cs.ucr.edu$ echo hello > text
+dting001@kilo-27.cs.ucr.edu$ cat < text
+hello
+dting001@kilo-27.cs.ucr.edu$ echo world >> text
+dting001@kilo-27.cs.ucr.edu$ cat < text
+hello
+world
+dting001@kilo-27.cs.ucr.edu$ ps aux | grep tingles
+dting001@kilo-27.cs.ucr.edu$ ps  ps aux
+dting001@kilo-27.cs.ucr.edu$ USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0  23596  1640 ?        Ss   Aug14   0:00 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    Aug14   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    Aug14   0:00 [migration/0]
+root         4  0.0  0.0      0     0 ?        S    Aug14   0:01 [ksoftirqd/0]
+root         5  0.0  0.0      0     0 ?        S    Aug14   0:00 [migration/0]
+root         6  0.0  0.0      0     0 ?        S    Aug14   0:01 [watchdog/0]
+root         7  0.0  0.0      0     0 ?        S    Aug14   0:00 [migration/1]
+root         8  0.0  0.0      0     0 ?        S    Aug14   0:00 [migration/1]
+root         9  0.0  0.0      0     0 ?        S    Aug14   0:00 [ksoftirqd/1]
+root        10  0.0  0.0      0     0 ?        S    Aug14   0:01 [watchdog/1]
+root        11  0.0  0.0      0     0 ?        S    Aug14   0:00 [migration/2]
+root        12  0.0  0.0      0     0 ?        S    Aug14   0:00 [migration/2]
+root        13  0.0  0.0      0     0 ?        S    Aug14   0:00 [ksoftirqd/2]
+root        14  0.0  0.0      0     0 ?        S    Aug14   0:01 [watchdog/2]
+root        15  0.0  0.0      0     0 ?        S    Aug14   0:00 [migration/3]
+root        16  0.0  0.0      0     0 ?        S    Aug14   0:00 [migration/3]
+root        17  0.0  0.0      0     0 ?        S    Aug14   0:00 [ksoftirqd/3]
+root        18  0.0  0.0      0     0 ?        S    Aug14   0:01 [watchdog/3]
+root        19  0.0  0.0      0     0 ?        S    Aug14   9:19 [events/0]
+root        20  0.0  0.0      0     0 ?        S    Aug14   0:16 [events/1]
+root        21  0.0  0.0      0     0 ?        S    Aug14   0:17 [events/2]
+root        22  0.0  0.0      0     0 ?        S    Aug14   0:13 [events/3]
+root        23  0.0  0.0      0     0 ?        S    Aug14   0:00 [cgroup]
+root        24  0.0  0.0      0     0 ?        S    Aug14   0:00 [khelper]
+root        25  0.0  0.0      0     0 ?        S    Aug14   0:00 [netns]
+root        26  0.0  0.0      0     0 ?        S    Aug14   0:00 [async/mgr]
+root        27  0.0  0.0      0     0 ?        S    Aug14   0:00 [pm]
+root        28  0.0  0.0      0     0 ?        S    Aug14   0:04 [sync_supers]
+root        29  0.0  0.0      0     0 ?        S    Aug14   0:04 [bdi-default]
+root        30  0.0  0.0      0     0 ?        S    Aug14   0:00 [kintegrityd/0]
+root        31  0.0  0.0      0     0 ?        S    Aug14   0:00 [kintegrityd/1]
+root        32  0.0  0.0      0     0 ?        S    Aug14   0:00 [kintegrityd/2]
+root        33  0.0  0.0      0     0 ?        S    Aug14   0:00 [kintegrityd/3]
+root        34  0.0  0.0      0     0 ?        S    Aug14   0:01 [kblockd/0]
+root        35  0.0  0.0      0     0 ?        S    Aug14   0:01 [kblockd/1]
+root        36  0.0  0.0      0     0 ?        S    Aug14   0:00 [kblockd/2]
+root        37  0.0  0.0      0     0 ?        S    Aug14   0:00 [kblockd/3]
+root        38  0.0  0.0      0     0 ?        S    Aug14   0:00 [kacpid]
+root        39  0.0  0.0      0     0 ?        S    Aug14   0:00 [kacpi_notify]
+root        40  0.0  0.0      0     0 ?        S    Aug14   0:00 [kacpi_hotplug]
+root        41  0.0  0.0      0     0 ?        S    Aug14   0:00 [ata_aux]
+root        42  0.0  0.0      0     0 ?        S    Aug14   0:00 [ata_sff/0]
+root        43  0.0  0.0      0     0 ?        S    Aug14   0:00 [ata_sff/1]
+root        44  0.0  0.0      0     0 ?        S    Aug14   0:00 [ata_sff/2]
+root        45  0.0  0.0      0     0 ?        S    Aug14   0:00 [ata_sff/3]
+root        46  0.0  0.0      0     0 ?        S    Aug14   0:00 [ksuspend_usbd]
+root        47  0.0  0.0      0     0 ?        S    Aug14   0:00 [khubd]
+root        48  0.0  0.0      0     0 ?        S    Aug14   0:00 [kseriod]
+root        49  0.0  0.0      0     0 ?        S    Aug14   0:00 [md/0]
+root        50  0.0  0.0      0     0 ?        S    Aug14   0:00 [md/1]
+root        51  0.0  0.0      0     0 ?        S    Aug14   0:00 [md/2]
+root        52  0.0  0.0      0     0 ?        S    Aug14   0:00 [md/3]
+root        53  0.0  0.0      0     0 ?        S    Aug14   0:00 [md_misc/0]
+root        54  0.0  0.0      0     0 ?        S    Aug14   0:00 [md_misc/1]
+root        55  0.0  0.0      0     0 ?        S    Aug14   0:00 [md_misc/2]
+root        56  0.0  0.0      0     0 ?        S    Aug14   0:00 [md_misc/3]
+root        57  0.0  0.0      0     0 ?        S    Aug14   0:00 [linkwatch]
+root        58  0.0  0.0      0     0 ?        S    Aug14   0:00 [khungtaskd]
+root        59  0.0  0.0      0     0 ?        S    Aug14   0:00 [kswapd0]
+root        60  0.0  0.0      0     0 ?        SN   Aug14   0:00 [ksmd]
+root        61  0.0  0.0      0     0 ?        SN   Aug14   0:07 [khugepaged]
+root        62  0.0  0.0      0     0 ?        S    Aug14   0:00 [aio/0]
+root        63  0.0  0.0      0     0 ?        S    Aug14   0:00 [aio/1]
+root        64  0.0  0.0      0     0 ?        S    Aug14   0:00 [aio/2]
+root        65  0.0  0.0      0     0 ?        S    Aug14   0:00 [aio/3]
+root        66  0.0  0.0      0     0 ?        S    Aug14   0:00 [crypto/0]
+root        67  0.0  0.0      0     0 ?        S    Aug14   0:00 [crypto/1]
+root        68  0.0  0.0      0     0 ?        S    Aug14   0:00 [crypto/2]
+root        69  0.0  0.0      0     0 ?        S    Aug14   0:00 [crypto/3]
+root        74  0.0  0.0      0     0 ?        S    Aug14   0:00 [kthrotld/0]
+root        75  0.0  0.0      0     0 ?        S    Aug14   0:00 [kthrotld/1]
+root        76  0.0  0.0      0     0 ?        S    Aug14   0:00 [kthrotld/2]
+root        77  0.0  0.0      0     0 ?        S    Aug14   0:00 [kthrotld/3]
+root        79  0.0  0.0      0     0 ?        S    Aug14   0:00 [kpsmoused]
+root        80  0.0  0.0      0     0 ?        S    Aug14   0:00 [usbhid_resumer]
+root       111  0.0  0.0      0     0 ?        S    Aug14   0:00 [kstriped]
+root       197  0.0  0.0      0     0 ?        S    Aug14   0:00 [scsi_eh_0]
+root       198  0.0  0.0      0     0 ?        S    Aug14   0:00 [scsi_eh_1]
+root       264  0.0  0.0      0     0 ?        S    Aug14   0:00 [scsi_eh_2]
+root       265  0.0  0.0      0     0 ?        S    Aug14   0:00 [scsi_eh_3]
+root       266  0.0  0.0      0     0 ?        S    Aug14   0:00 [scsi_eh_4]
+root       267  0.0  0.0      0     0 ?        S    Aug14   0:00 [scsi_eh_5]
+root       268  0.0  0.0      0     0 ?        S    Aug14   0:00 [scsi_eh_6]
+root       269  0.0  0.0      0     0 ?        S    Aug14   0:00 [scsi_eh_7]
+root       383  0.0  0.0      0     0 ?        S    Aug14   0:02 [jbd2/sda1-8]
+root       384  0.0  0.0      0     0 ?        S    Aug14   0:00 [ext4-dio-unwrit]
+root       479  0.0  0.0  10992  1096 ?        S<s  Aug14   0:00 /sbin/udevd -d
+root       524  0.0  0.0      0     0 ?        S    Aug14   0:00 [hd-audio0]
+root       527  0.0  0.0      0     0 ?        S    Aug14   0:00 [hd-audio1]
+root       531  0.0  0.0      0     0 ?        S    Aug14   0:04 [flush-8:0]
+root      1413  0.0  0.0      0     0 ?        S    Aug14   0:00 [kauditd]
+root      1658  0.0  0.0   9120   984 ?        Ss   Aug14   0:00 /sbin/dhclient -1 -q -cf /etc/dhcp/dhclient-eth0.conf
+root      1711  0.0  0.0   6160   572 ?        Ss   Aug14   0:00 /sbin/portreserve
+root      1718  0.0  0.0 249284  2916 ?        Sl   Aug14   0:00 /sbin/rsyslogd -i /var/run/syslogd.pid -c 5
+root      1730  0.0  0.0  10888   632 ?        Ss   Aug14   0:42 irqbalance --pid=/var/run/irqbalance.pid
+rpc       1744  0.0  0.0  18976  1000 ?        Ss   Aug14   0:01 rpcbind
+rpcuser   1762  0.0  0.0  23348  1336 ?        Ss   Aug14   0:00 rpc.statd
+dbus      1783  0.0  0.0  26284  1816 ?        Ss   Aug14   0:01 dbus-daemon --system
+root      1833  0.0  0.0 189348  3336 ?        Ss   Aug14   0:00 cupsd -C /etc/cups/cupsd.conf
+68        1858  0.0  0.0  43312  5676 ?        Ssl  Aug14   0:03 hald
+root      1859  0.0  0.0  20328  1184 ?        S    Aug14   0:00 hald-runner
+root      1905  0.0  0.0  22448  1112 ?        S    Aug14   0:02 hald-addon-input: Listening on /dev/input/event0 /dev
+68        1906  0.0  0.0  17932  1040 ?        S    Aug14   0:08 /usr/libexec/hald-addon-acpi
+root      1921  0.0  0.0   6776   344 ?        Ss   Aug14   0:00 /usr/sbin/mcelog --daemon
+root      2013  0.0  0.0  81296  3412 ?        Ss   Aug14   0:01 /usr/libexec/postfix/master
+postfix   2020  0.0  0.0  83640  3624 ?        S    Aug14   0:00 qmgr -l -t fifo -u
+root      2023  0.0  0.0 117300  1256 ?        Ss   Aug14   0:02 crond
+root      2037  0.0  0.0 133940  2172 ?        Ssl  Aug14   0:00 /usr/sbin/gdm-binary -nodaemon
+root      2042  0.0  0.0   4064   532 tty2     Ss+  Aug14   0:00 /sbin/mingetty /dev/tty2
+root      2044  0.0  0.0   4064   536 tty3     Ss+  Aug14   0:00 /sbin/mingetty /dev/tty3
+root      2046  0.0  0.0   4064   532 tty4     Ss+  Aug14   0:00 /sbin/mingetty /dev/tty4
+root      2048  0.0  0.0   4064   532 tty5     Ss+  Aug14   0:00 /sbin/mingetty /dev/tty5
+root      2050  0.0  0.0   4064   532 tty6     Ss+  Aug14   0:00 /sbin/mingetty /dev/tty6
+root      2096  0.0  0.0 2087192 5944 ?        Sl   Aug14   0:00 /usr/sbin/console-kit-daemon --no-daemon
+root      2171  0.0  0.0  49812  2724 ?        S    Aug14   0:00 /usr/libexec/devkit-power-daemon
+root      2213  0.0  0.0  56736  4316 ?        S    Aug14   0:00 /usr/libexec/polkit-1/polkitd
+rtkit     2223  0.0  0.0 168456  1184 ?        SNl  Aug14   0:12 /usr/libexec/rtkit-daemon
+postfix  23974  0.0  0.0  83468  3488 ?        S    11:44   0:00 pickup -l -t fifo -u
+root     24484  0.0  0.0 169012  3552 ?        Sl   11:46   0:00 /usr/libexec/gdm-simple-slave --display-id /org/gnome
+root     24486  0.9  0.6 168832 48556 tty7     Ss+  11:46   0:03 /usr/bin/Xorg :0 -br -verbose -audit 4 -auth /var/run
+gdm      24505  0.0  0.0  20172   668 ?        S    11:46   0:00 /usr/bin/dbus-launch --exit-with-session
+root     24544  0.0  0.0 241484  5104 ?        SLl  11:46   0:00 pam: gdm-password
+dting001 24556  0.0  0.0 233200  5828 ?        Sl   11:46   0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+root     24561  0.0  0.0  61988  3428 ?        Sl   Aug18   0:20 /usr/libexec/udisks-daemon
+root     24562  0.0  0.0  45044   656 ?        S    Aug18   0:00 udisks-daemon: polling /dev/sdb
+dting001 24581  0.0  0.0 255540  6468 ?        Ssl  11:46   0:00 gnome-session
+dting001 24589  0.0  0.0  24416   692 ?        S    11:46   0:00 dbus-launch --sh-syntax --exit-with-session
+dting001 24590  0.0  0.0  26172  1484 ?        Ss   11:46   0:00 /bin/dbus-daemon --fork --print-pid 5 --print-address
+dting001 24646  0.0  0.0      0     0 ?        Z    11:46   0:00 [gedit] <defunct>
+dting001 24656  0.0  0.0 137744  5668 ?        S    11:46   0:00 /usr/libexec/gconfd-2
+dting001 24680  0.0  0.0 141456  2204 ?        S    11:46   0:00 /usr/libexec/gvfsd
+dting001 24692  0.0  0.1 506476 10272 ?        Ssl  11:46   0:00 /usr/libexec/gnome-settings-daemon
+dting001 24694  0.0  0.0 295728  7760 ?        Ss   11:46   0:00 seahorse-daemon
+dting001 24707  0.0  0.0 302152  3568 ?        S    11:46   0:00 /usr/libexec/gvfs-gdu-volume-monitor
+dting001 24712  0.0  0.0 232444  2076 ?        Sl   11:46   0:00 /usr/libexec/gvfs-afc-volume-monitor
+dting001 24715  0.0  0.0 150900  2224 ?        S    11:46   0:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+dting001 24718  0.0  0.1 248496 10624 ?        S    11:46   0:00 metacity
+dting001 24722  0.0  0.0 522076  4852 ?        S<sl 11:46   0:00 /usr/bin/pulseaudio --start --log-target=syslog
+dting001 24723  0.1  0.2 362532 16740 ?        S    11:46   0:00 gnome-panel
+dting001 24727  0.3  0.3 707288 24680 ?        S    11:46   0:01 nautilus
+dting001 24729  0.0  0.0 831616  7484 ?        Ssl  11:46   0:00 /usr/libexec/bonobo-activation-server --ac-activate -
+dting001 24731  0.0  0.0  97320  2704 ?        S    11:46   0:00 /usr/libexec/pulse/gconf-helper
+dting001 24734  0.0  0.2 328584 19540 ?        S    11:46   0:00 python /usr/share/system-config-printer/applet.py
+dting001 24737  0.0  0.0 119344  4076 ?        S    11:46   0:00 /usr/libexec/im-settings-daemon
+dting001 24738  0.0  0.0 260064  7164 ?        S    11:46   0:00 gnome-power-manager
+dting001 24739  0.0  0.0 366440  7760 ?        S    11:46   0:00 /usr/libexec/evolution/2.32/evolution-alarm-notify
+dting001 24747  0.0  0.1 351360 12804 ?        S    11:46   0:00 /usr/libexec/wnck-applet --oaf-activate-iid=OAFIID:GN
+dting001 24749  0.0  0.1 387412 11360 ?        S    11:46   0:00 gnome-volume-control-applet
+dting001 24763  0.0  0.1 336480  9572 ?        S    11:46   0:00 /usr/libexec/trashapplet --oaf-activate-iid=OAFIID:GN
+dting001 24766  0.0  0.1 413712 11444 ?        S    11:46   0:00 /usr/libexec/gdm-user-switch-applet --oaf-activate-ii
+dting001 24767  0.0  0.2 442128 18408 ?        S    11:46   0:00 /usr/bin/gnote --panel-applet --oaf-activate-iid=OAFI
+dting001 24768  0.0  0.1 468476 13864 ?        S    11:46   0:00 /usr/libexec/clock-applet --oaf-activate-iid=OAFIID:G
+dting001 24774  0.0  0.0 293236  7872 ?        S    11:46   0:00 /usr/libexec/notification-area-applet --oaf-activate-
+dting001 24777  0.0  0.0 232016  5540 ?        S    11:46   0:00 /usr/libexec/polkit-gnome-authentication-agent-1
+dting001 24779  0.0  0.0 257656  6764 ?        S    11:46   0:00 /usr/libexec/gdu-notification-daemon
+dting001 24853  0.0  0.0 148216  3208 ?        S    11:46   0:00 /usr/libexec/gvfsd-trash --spawner :1.5 /org/gtk/gvfs
+dting001 24927  0.0  0.0 266176  2684 ?        Ss   11:46   0:00 gnome-screensaver
+dting001 24946  0.0  0.0  45140  2356 ?        S    11:46   0:00 /usr/libexec/gconf-im-settings-daemon
+dting001 24949  0.0  0.0 141484  2372 ?        S    11:46   0:00 /usr/libexec/gvfsd-burn --spawner :1.5 /org/gtk/gvfs/
+root     25120  0.0  0.0 215608  3296 ?        Sl   11:47   0:00 /usr/sbin/ypbind
+root     25128  0.0  0.0      0     0 ?        S    11:47   0:00 [scsi_eh_9]
+root     25129  0.0  0.0      0     0 ?        S    11:47   0:00 [usb-storage]
+root     25141  0.0  0.0  10988  1084 ?        S<   11:47   0:00 /sbin/udevd -d
+root     25142  0.0  0.0  10988  1076 ?        S<   11:47   0:00 /sbin/udevd -d
+root     25151  0.0  0.0  22444  1104 ?        S    11:47   0:00 hald-addon-storage: polling /dev/sdb (every 2 sec)
+dting001 25161  0.0  0.0 135132  1816 ?        S    11:47   0:00 /usr/libexec/gvfsd-metadata
+root     25163  0.0  0.0      0     0 ?        S    11:47   0:00 [flush-8:16]
+dting001 25224  0.0  0.0 273164  4504 ?        Ss   11:49   0:00 kdeinit4: kdeinit4 Running...
+dting001 25226  0.0  0.0 274056  6764 ?        S    11:49   0:00 klauncher --fd=8
+dting001 25228  0.0  0.2 398784 16792 ?        S    11:49   0:00 kded4
+dting001 25230  0.0  0.0  13604  1228 ?        S    11:49   0:00 /usr/libexec/gam_server
+dting001 25367  0.0  0.2 399208 18820 ?        S    11:49   0:00 /usr/bin/knotify4
+dting001 25378  0.5  0.4 575956 33284 ?        Rl   11:50   0:00 konsole
+dting001 25380  0.0  0.0 112580  1948 pts/0    Ss   11:50   0:00 /bin/bash
+dting001 25409  0.0  0.0 107120   808 pts/0    S+   11:50   0:00 script hw4.script
+dting001 25411  0.0  0.0 107124   400 pts/0    S+   11:50   0:00 script hw4.script
+dting001 25412  0.0  0.0 112580  1948 pts/1    Ss   11:50   0:00 bash -i
+dting001 25433  0.0  0.0  18480  1616 pts/1    S+   11:50   0:00 ./a.out
+dting001 25455  0.0  0.0 114484  1284 pts/1    R+   11:52   0:00 ps aux
+root     32711  0.0  0.0  66616  1180 ?        Ss   Aug19   0:00 /usr/sbin/sshd
+
+dting001@kilo-27.cs.ucr.edu$ ps aux | grep dting001 
+dting001@kilo-27.cs.ucr.edu$ dting001 24556  0.0  0.0 233200  5828 ?        Sl   11:46   0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+dting001 24581  0.0  0.0 255540  6468 ?        Ssl  11:46   0:00 gnome-session
+dting001 24589  0.0  0.0  24416   692 ?        S    11:46   0:00 dbus-launch --sh-syntax --exit-with-session
+dting001 24590  0.0  0.0  26172  1484 ?        Ss   11:46   0:00 /bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+dting001 24646  0.0  0.0      0     0 ?        Z    11:46   0:00 [gedit] <defunct>
+dting001 24656  0.0  0.0 137744  5668 ?        S    11:46   0:00 /usr/libexec/gconfd-2
+dting001 24680  0.0  0.0 141456  2204 ?        S    11:46   0:00 /usr/libexec/gvfsd
+dting001 24692  0.0  0.1 506476 10272 ?        Ssl  11:46   0:00 /usr/libexec/gnome-settings-daemon
+dting001 24694  0.0  0.0 295728  7760 ?        Ss   11:46   0:00 seahorse-daemon
+dting001 24707  0.0  0.0 302152  3568 ?        S    11:46   0:00 /usr/libexec/gvfs-gdu-volume-monitor
+dting001 24712  0.0  0.0 232444  2076 ?        Sl   11:46   0:00 /usr/libexec/gvfs-afc-volume-monitor
+dting001 24715  0.0  0.0 150900  2224 ?        S    11:46   0:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+dting001 24718  0.0  0.1 248496 10624 ?        S    11:46   0:00 metacity
+dting001 24722  0.0  0.0 522076  4852 ?        S<sl 11:46   0:00 /usr/bin/pulseaudio --start --log-target=syslog
+dting001 24723  0.1  0.2 362532 16740 ?        S    11:46   0:00 gnome-panel
+dting001 24727  0.3  0.3 707288 24680 ?        Sl   11:46   0:01 nautilus
+dting001 24729  0.0  0.0 831616  7484 ?        Ssl  11:46   0:00 /usr/libexec/bonobo-activation-server --ac-activate --ior-output-fd=19
+dting001 24731  0.0  0.0  97320  2704 ?        S    11:46   0:00 /usr/libexec/pulse/gconf-helper
+dting001 24734  0.0  0.2 328584 19540 ?        S    11:46   0:00 python /usr/share/system-config-printer/applet.py
+dting001 24737  0.0  0.0 119344  4076 ?        S    11:46   0:00 /usr/libexec/im-settings-daemon
+dting001 24738  0.0  0.0 260064  7164 ?        S    11:46   0:00 gnome-power-manager
+dting001 24739  0.0  0.0 366440  7760 ?        S    11:46   0:00 /usr/libexec/evolution/2.32/evolution-alarm-notify
+dting001 24747  0.0  0.1 351360 12804 ?        S    11:46   0:00 /usr/libexec/wnck-applet --oaf-activate-iid=OAFIID:GNOME_Wncklet_Factory --oaf-ior-fd=18
+dting001 24749  0.0  0.1 387412 11360 ?        S    11:46   0:00 gnome-volume-control-applet
+dting001 24763  0.0  0.1 336480  9572 ?        S    11:46   0:00 /usr/libexec/trashapplet --oaf-activate-iid=OAFIID:GNOME_Panel_TrashApplet_Factory --oaf-ior-fd=24
+dting001 24766  0.0  0.1 413712 11444 ?        S    11:46   0:00 /usr/libexec/gdm-user-switch-applet --oaf-activate-iid=OAFIID:GNOME_FastUserSwitchApplet_Factory --oaf-ior-fd=33
+dting001 24767  0.0  0.2 442128 18408 ?        S    11:46   0:00 /usr/bin/gnote --panel-applet --oaf-activate-iid=OAFIID:GnoteApplet_Factory --oaf-ior-fd=21
+dting001 24768  0.0  0.1 468476 13864 ?        S    11:46   0:00 /usr/libexec/clock-applet --oaf-activate-iid=OAFIID:GNOME_ClockApplet_Factory --oaf-ior-fd=39
+dting001 24774  0.0  0.0 293236  7872 ?        S    11:46   0:00 /usr/libexec/notification-area-applet --oaf-activate-iid=OAFIID:GNOME_NotificationAreaApplet_Factory --oaf-ior-fd=45
+dting001 24777  0.0  0.0 232016  5540 ?        S    11:46   0:00 /usr/libexec/polkit-gnome-authentication-agent-1
+dting001 24779  0.0  0.0 257656  6764 ?        S    11:46   0:00 /usr/libexec/gdu-notification-daemon
+dting001 24853  0.0  0.0 148216  3208 ?        S    11:46   0:00 /usr/libexec/gvfsd-trash --spawner :1.5 /org/gtk/gvfs/exec_spaw/0
+dting001 24927  0.0  0.0 266176  2684 ?        Ss   11:46   0:00 gnome-screensaver
+dting001 24946  0.0  0.0  45140  2356 ?        S    11:46   0:00 /usr/libexec/gconf-im-settings-daemon
+dting001 24949  0.0  0.0 141484  2372 ?        S    11:46   0:00 /usr/libexec/gvfsd-burn --spawner :1.5 /org/gtk/gvfs/exec_spaw/1
+dting001 25161  0.0  0.0 135132  1816 ?        S    11:47   0:00 /usr/libexec/gvfsd-metadata
+dting001 25224  0.0  0.0 273164  4504 ?        Ss   11:49   0:00 kdeinit4: kdeinit4 Running...
+dting001 25226  0.0  0.0 274056  6764 ?        S    11:49   0:00 klauncher --fd=8
+dting001 25228  0.0  0.2 398784 16792 ?        S    11:49   0:00 kded4
+dting001 25230  0.0  0.0  13604  1228 ?        S    11:49   0:00 /usr/libexec/gam_server
+dting001 25367  0.0  0.2 399208 18820 ?        S    11:49   0:00 /usr/bin/knotify4
+dting001 25378  0.5  0.4 576148 33412 ?        Sl   11:50   0:00 konsole
+dting001 25380  0.0  0.0 112580  1948 pts/0    Ss   11:50   0:00 /bin/bash
+dting001 25409  0.0  0.0 107120   808 pts/0    S+   11:50   0:00 script hw4.script
+dting001 25411  0.0  0.0 107124   400 pts/0    S+   11:50   0:00 script hw4.script
+dting001 25412  0.0  0.0 112580  1948 pts/1    Ss   11:50   0:00 bash -i
+dting001 25433  0.0  0.0  18612  1644 pts/1    S+   11:50   0:00 ./a.out
+dting001 25459  0.0  0.0 114480  1280 pts/1    R+   11:52   0:00 ps aux
+dting001 25460  0.0  0.0 103256   836 pts/1    S+   11:52   0:00 grep dting001
+
+dting001@kilo-27.cs.ucr.edu$ ps aux | tail
+dting001@kilo-27.cs.ucr.edu$ dting001 25378  0.5  0.4 576340 33528 ?        Sl   11:50   0:00 konsole
+dting001 25380  0.0  0.0 112580  1948 pts/0    Ss   11:50   0:00 /bin/bash
+dting001 25409  0.0  0.0 107120   808 pts/0    S+   11:50   0:00 script hw4.script
+dting001 25411  0.0  0.0 107124   400 pts/0    S+   11:50   0:00 script hw4.script
+dting001 25412  0.0  0.0 112580  1948 pts/1    Ss   11:50   0:00 bash -i
+dting001 25433  0.0  0.0  18612  1660 pts/1    S+   11:50   0:00 ./a.out
+dting001 25461  0.0  0.0      0     0 pts/1    Z+   11:52   0:00 [a.out] <defunct>
+dting001 25463  0.0  0.0 114480  1276 pts/1    R+   11:52   0:00 ps aux
+dting001 25464  0.0  0.0 100944   644 pts/1    S+   11:52   0:00 tail
+root     32711  0.0  0.0  66616  1180 ?        Ss   Aug19   0:00 /usr/sbin/sshd
+
+dting001@kilo-27.cs.ucr.edu$ tail #testing ctrl-C
+dting001@kilo-27.cs.ucr.edu$ head
+dting001@kilo-27.cs.ucr.edu$ cat /dev  ev/random > text @#  #testing ctrl -C   -C
+^C
+
+dting001@kilo-27.cs.ucr.edu$ ^C
+
+dting001@kilo-27.cs.ucr.edu$ ^C
+
+dting001@kilo-27.cs.ucr.edu$ c cat       top
+dting001@kilo-27.cs.ucr.edu$ [H[2J(B[mtop - 11:57:13 up 11 days,  3:11,  4 users,  load average: 0.01, 0.02, 0.02(B[m[39;49m[K
+Tasks:(B[m[39;49m(B[m 182 (B[m[39;49mtotal,(B[m[39;49m(B[m   1 (B[m[39;49mrunning,(B[m[39;49m(B[m 178 (B[m[39;49msleeping,(B[m[39;49m(B[m   0 (B[m[39;49mstopped,(B[m[39;49m(B[m   3 (B[m[39;49mzombie(B[m[39;49m[K
+Cpu(s):(B[m[39;49m(B[m  0.1%(B[m[39;49mus,(B[m[39;49m(B[m  0.0%(B[m[39;49msy,(B[m[39;49m(B[m  0.0%(B[m[39;49mni,(B[m[39;49m(B[m 99.8%(B[m[39;49mid,(B[m[39;49m(B[m  0.0%(B[m[39;49mwa,(B[m[39;49m(B[m  0.0%(B[m[39;49mhi,(B[m[39;49m(B[m  0.0%(B[m[39;49msi,(B[m[39;49m(B[m  0.0%(B[m[39;49mst(B[m[39;49m[K
+Mem: (B[m[39;49m(B[m  8002728k (B[m[39;49mtotal,(B[m[39;49m(B[m  2720084k (B[m[39;49mused,(B[m[39;49m(B[m  5282644k (B[m[39;49mfree,(B[m[39;49m(B[m   276324k (B[m[39;49mbuffers(B[m[39;49m[K
+Swap:(B[m[39;49m(B[m  8142840k (B[m[39;49mtotal,(B[m[39;49m(B[m        0k (B[m[39;49mused,(B[m[39;49m(B[m  8142840k (B[m[39;49mfree,(B[m[39;49m(B[m  1884792k (B[m[39;49mcached(B[m[39;49m[K
+[6;1H
+[7m  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                                                  (B[m[39;49m[K
+(B[m24486 root      20   0  173m  47m  25m S  2.0  0.6   0:03.72 Xorg                                                     (B[m[39;49m
+(B[m25378 dting001  20   0  562m  32m  21m S  2.0  0.4   0:01.15 konsole                                                  (B[m[39;49m
+(B[m    1 root      20   0 23596 1640 1304 S  0.0  0.0   0:00.64 init                                                     (B[m[39;49m
+(B[m    2 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kthreadd                                                 (B[m[39;49m
+(B[m    3 root      RT   0     0    0    0 S  0.0  0.0   0:00.28 migration/0                                              (B[m[39;49m
+(B[m    4 root      20   0     0    0    0 S  0.0  0.0   0:01.16 ksoftirqd/0                                              (B[m[39;49m
+(B[m    5 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 migration/0                                              (B[m[39;49m
+(B[m    6 root      RT   0     0    0    0 S  0.0  0.0   0:01.64 watchdog/0                                               (B[m[39;49m
+(B[m    7 root      RT   0     0    0    0 S  0.0  0.0   0:00.12 migration/1                                              (B[m[39;49m
+(B[m    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 migration/1                                              (B[m[39;49m
+(B[m    9 root      20   0     0    0    0 S  0.0  0.0   0:00.73 ksoftirqd/1                                              (B[m[39;49m
+(B[m   10 root      RT   0     0    0    0 S  0.0  0.0   0:01.25 watchdog/1                                               (B[m[39;49m
+(B[m   11 root      RT   0     0    0    0 S  0.0  0.0   0:00.07 migration/2                                              (B[m[39;49m
+(B[m   12 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 migration/2                                              (B[m[39;49m
+(B[m   13 root      20   0     0    0    0 S  0.0  0.0   0:00.50 ksoftirqd/2                                              (B[m[39;49m
+(B[m   14 root      RT   0     0    0    0 S  0.0  0.0   0:01.37 watchdog/2                                               (B[m[39;49m
+(B[m   15 root      RT   0     0    0    0 S  0.0  0.0   0:00.12 migration/3                                              (B[m[39;49m
+(B[m   16 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 migration/3                                              (B[m[39;49m
+(B[m   17 root      20   0     0    0    0 S  0.0  0.0   0:00.29 ksoftirqd/3                                              (B[m[39;49m
+(B[m   18 root      RT   0     0    0    0 S  0.0  0.0   0:01.28 watchdog/3                                               (B[m[39;49m
+(B[m   19 root      20   0     0    0    0 S  0.0  0.0   9:19.82 events/0                                                 (B[m[39;49m
+(B[m   20 root      20   0     0    0    0 S  0.0  0.0   0:16.51 events/1                                                 (B[m[39;49m
+(B[m   21 root      20   0     0    0    0 S  0.0  0.0   0:17.10 events/2                                                 (B[m[39;49m
+(B[m   22 root      20   0     0    0    0 S  0.0  0.0   0:13.45 events/3                                                 (B[m[39;49m
+(B[m   23 root      20   0     0    0    0 S  0.0  0.0   0:00.00 cgroup                                                   (B[m[39;49m
+(B[m   24 root      20   0     0    0    0 S  0.0  0.0   0:00.00 khelper                                                  (B[m[39;49m
+(B[m   25 root      20   0     0    0    0 S  0.0  0.0   0:00.01 netns                                                    (B[m[39;49m
+(B[m   26 root      20   0     0    0    0 S  0.0  0.0   0:00.00 async/mgr                                                (B[m[39;49m
+(B[m   27 root      20   0     0    0    0 S  0.0  0.0   0:00.00 pm                                                       (B[m[39;49m
+(B[m   28 root      20   0     0    0    0 S  0.0  0.0   0:04.06 sync_supers                                              (B[m[39;49m[6;1H[K
+[38;1H[?12l[?25h
+
+dting001@kilo-27.cs.ucr.edu$ exit
+]0;dting001@kilo-27:~/Desktop/rshell/src~/Desktop/rshell/src
+dting001@kilo-27 $ exit
+exit
+
+Script done on Mon 25 Aug 2014 11:57:23 AM PDT
