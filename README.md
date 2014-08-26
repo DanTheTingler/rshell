@@ -8,6 +8,8 @@ ls, which was created for hw2-cs100, emulates the ls command in bash shell, and 
 
 rshell was updated in hw3-cs100 to be able to handle piping and io redirection.
 
+In the 4th assignment, rshell was updated to be able to take the ctrl-C command and use cd. It now also uses execv and the PATH variable instead of execvp.
+
 DOCUMENTATION:
 Upon startup, rshell prints out the hostname, name of the system currently being used, and the bash sign, '$'. Rshell takes in bash commands through user input and executes as the linux-based bash command shell does. Besides a few bugs detailed below, it's output is nearly identical to a regular bash shell.
 
@@ -66,3 +68,14 @@ BUGS FOR HW3-RSHELL:
 4. Multipe io redirections in a line does not work either.
 
 5. Some commands, such as the history command, do not work for some reason. Execvp doesn't recognize them.
+
+BUGS FOR HW4-RSHELL:
+
+1. While in rshell, you cannot run any executables. For example, you cannot run ./a.out.
+
+2. Piping still has the same enter bug.
+
+3. ctrl-C will occasionally have the same bug as piping. That is, when ctrl-C is pressed, sometimes you must press enter afterwards to continue using the program.
+
+4. After using piping/ctrl-C, the enter bug will suddenly appear, even after simple commands. The problem is most likely still with piping.
+
