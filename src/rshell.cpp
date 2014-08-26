@@ -41,9 +41,9 @@ int main(int argc, char *argv[])
         char hostname[256] = {0};
         
         getlogin_r(user, sizeof(user)-1); //get user's login info
-        //{
-            //perror("getlogin_r has failed");
-        //}    
+        {
+            perror("getlogin_r has failed");
+        }    
             
         if(gethostname(hostname, sizeof(hostname)-1) != 0) //get user's host name
         {
