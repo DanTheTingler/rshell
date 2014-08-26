@@ -6,10 +6,14 @@ This is a bash shell project for hw1-cs100, called rshell. Rshell is a simple pr
 
 ls, which was created for hw2-cs100, emulates the ls command in bash shell, and can take in the -l, -a, and -R flags.
 
+rshell was updated in hw3-cs100 to be able to handle piping and io redirection.
+
 DOCUMENTATION:
 Upon startup, rshell prints out the hostname, name of the system currently being used, and the bash sign, '$'. Rshell takes in bash commands through user input and executes as the linux-based bash command shell does. Besides a few bugs detailed below, it's output is nearly identical to a regular bash shell.
 
 ls runs based on user input from argv, so to use it, go into /bin and call ls. From there, you can append directory names and flags to your heart's desire.
+
+After hw3, io redirection and piping have been implemented into the rshell program.
 
 BUILDING RSHELL:
 Building rshell is easy! A Makefile has been included, and after cloning the repository, simply navigate to where the Makefile is located. A /bin folder will be created for you. Navigate into it, and from there simply run shell by typing "./rshell"!
@@ -50,3 +54,15 @@ BUGS FOR LS:
 5. There are some general formatting issues, such as extra blank lines. Nothing that impairs readibility or usability.
 
 6. The file names are not output in alphabetical order.
+
+BUGS FOR HW3-RSHELL:
+
+1. After piping the program hangs. To get the program to proceed, you MUST press enter. Very strange bug.
+
+2. Piping is, on very rare occasions, sporadic. ps aux | head usually works, and worked just fine during testing, but there was been once or twice where it has not worked. Maybe ssh-ing has something to do with it.
+
+3. Chaining of piping does not work.
+
+4. Multipe io redirections in a line does not work either.
+
+5. Some commands, such as the history command, do not work for some reason. Execvp doesn't recognize them.
